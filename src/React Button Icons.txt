@@ -1,0 +1,31 @@
+import * as React from 'react';
+import Stack from '@mui/material/Stack';
+import IconButton from '@mui/material/IconButton';
+import DeleteIcon from '@mui/icons-material/Delete';
+
+import MoreHorizSharpIcon from '@mui/icons-material/MoreHorizSharp'; //3-dots horizontal
+import MoreVertSharpIcon from '@mui/icons-material/MoreVertSharp'; //3-dots vertical
+import TuneIcon from '@mui/icons-material/Tune'; //filters button icon
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';//arrow down
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';// arrow up
+import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';// thumb up - like icon
+import FavoriteIcon from '@mui/icons-material/Favorite';//heart icon
+
+export default function IconButtonSizes() {
+  return (
+    <Stack direction="row" alignItems="center" spacing={1}>
+      <IconButton aria-label="delete" size="small">
+        <DeleteIcon fontSize="inherit" />
+      </IconButton>
+      <IconButton aria-label="delete" size="small">
+        <DeleteIcon fontSize="small" />
+      </IconButton>
+      <IconButton aria-label="delete" size="large">
+        <DeleteIcon />
+      </IconButton>
+      <IconButton aria-label="delete" size="large">
+        <DeleteIcon fontSize="inherit" />
+      </IconButton>
+    </Stack>
+  );
+}

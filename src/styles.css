@@ -1,0 +1,478 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/*******************Start Header-NavBar*****************************************/
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: white;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.row a{
+    color: black;
+}
+.left-nav{
+    margin-left: 20px;
+}
+.left-nav .search-form{
+    width: 250px;
+    margin-left: 10px;
+    font-weight: 400;
+    font-size: 25px;
+}
+.left-nav .search-form .search-field{
+    width: 96.5%;
+    height: 40px;
+    border: none;
+    border-radius: 35px;
+    text-indent: 35px;
+    background: #f2f3f5;
+}
+.left-nav .search-form .search-icon{
+    position: absolute;
+    top: 20px;
+    left: 88px;
+}
+.center-nav{
+    width: 550px;
+    height: 60px;
+}
+.center-nav div{
+    margin: 0px 30px;
+}
+.center-nav div a:hover{
+    color: blue;
+}
+.right-nav{
+    margin-right: 20px;
+}
+.right-nav .nav-icon-container{
+    margin: 0 4px;
+    background:#f2f3f5;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border-radius: 20px;
+}
+.right-nav .nav-icon-container .menu, .notifications{
+    margin-top: 7px;
+}
+.right-nav .nav-icon-container .messenger{
+    margin-top: 10px;
+}
+/*************************End of Header styling************************/
+
+/****************Start Main Body***************************************/
+.main-body-container{
+    margin-top: 60px;
+    display: flex;
+    background:#f2f3f5;
+}
+/*****************Start Left Side menu*********************************/
+.side-menu-container{
+    margin-top: 30px;
+    margin-left: 20px;
+    width: 23%;
+    height: 200vh;
+    position: fixed;
+    top: 35px;
+    /* border: 1px solid red; */
+}
+.list-item-container{
+    display: flex;
+    align-items: center;
+    margin-top: 4.5px;
+    padding: 6.5px;
+}
+.list-item-container:hover{
+    background-color:rgb(216, 210, 210);
+}
+.list-item-container .label{
+    margin-left: 20px;
+    font-weight: 550;
+    font-size: 15px;
+}
+.shortcuts{
+    color: rgb(112, 111, 111);
+    margin-top: 15px;
+    border-top: 1px solid grey;
+    padding-top: 20px;
+}
+.bottom-footer{
+    margin-top: 10px;
+    margin-left: 0;
+    font-size: 14px;
+}
+/**********************End of LeftSideMenu***********************************/
+/******************Start NewsFeed/Post***************************************/
+.news-feed-container{
+    width: 45%;
+    margin-left: 30vw;
+    margin-right: 70px;
+}
+/************* Start StoriesReels**********************/
+.stories-reels-container{
+    margin: 20px 0px;
+    padding: 0.1px;
+    border-radius: 5px;
+    background: white;
+}
+.stories-reels-buttons{
+    display: flex;
+    justify-content: space-around;
+}
+.stories-reels-buttons .button{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    width: 45%;
+}
+.stories-reels-buttons .one{
+    border-bottom: 5px solid rgb(16, 85, 223);
+}
+.stories-reels-buttons .button .label{
+    margin-left: 120px;
+}
+.stories-reels-buttons .button p{
+    margin-left: 15px;
+}
+.stories-reels-buttons .button:hover{
+    background-color:rgb(216, 210, 210);
+}
+.stories-container{
+    display: flex;
+    margin-top: 10px;
+    /* overflow-x: none; */
+    /* position: absolute; */
+}
+.stories-container .stories{
+    position: static;
+}
+.story{
+    margin-left: 10px;
+    position: relative;
+}
+.story .story-img{
+    width: 114px;
+    height: 202px;
+    border-radius: 10px;
+}
+.story .acc-profile-circle{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 35px;
+    height: 35px;
+    border: 2px solid rgb(16, 25, 223);
+    border-radius: 20px;
+}
+/*************End StoriesReels**********************/
+/************* Start StatusForm*********************/
+.status-form-container{
+    padding: 0.1px;
+    border-radius: 5px;
+    background: white;
+}
+.form{
+    margin-top: 10px;
+}
+.acc-circle-container{
+    margin-left: 10px;
+}
+/* .status-form-container  */
+.inline-row{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+/* .status-form-container  */
+.status-field input{
+    width: 40vw;
+    height: 40px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 25px;
+    text-indent: 15px;
+    background: #f2f3f5;
+}
+.bottom-buttons{
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 10px 0;
+    padding: 0px 10px;
+    border-top: 1px solid #e2e2e2;
+}
+.bottom-buttons div{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin: 6px 0;
+    width: 30%;
+    border-radius: 5px;
+}
+.bottom-buttons div p{
+    margin-left: 10px;
+}
+.bottom-buttons div:hover{
+    background-color:#f2f3f5;
+}
+/**************End StatusForm***********************/
+/**************Start Post styling*******************/
+.post-container{
+    margin: 25px 0px;
+    padding: 0.1px;
+    border-radius: 5px;
+    background: white;
+    width: 670.38px;
+}
+.post-info-container{
+    display: flex;
+    margin: 10px;
+}
+.post-info{
+    margin-left: 15px;
+}
+.post-content{
+    /* margin: 0 10px; */
+}
+.caption{
+    margin: 20px 10px 10px;;
+}
+.photo{
+    width: 100%;
+    /* border-radius: 12px; */
+}
+.reactions-container{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 20px;
+}
+.reaction-buttons{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 7px 20px 7px;
+    padding: 3px 0;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+}
+.reaction-buttons .reaction-button{
+    display: flex;
+    align-items: center;
+    width: 25%;
+    margin-left: 40px;
+    padding: 5px;
+    border-radius: 10px;
+}
+.reaction-button .reaction-label{
+    margin-left: 10px;
+}
+.comment-post{
+    padding: 4px 0;
+    margin: 0 10px;
+    margin-bottom: 20px;
+}
+.type-comment input{
+    width: 39vw;
+    
+}
+/******************End NewsFeed/Post*********************************************/
+/******************Start Friends********************/
+.friends-container{
+    width: 22%;
+    position: fixed;
+    right: 0;
+}
+.heading-contacts{
+    display: flex;
+    justify-content: space-between;
+    margin-left:10px;
+    border: none;
+}
+.heading-contacts div{
+    display: flex;
+    justify-content: space-evenly;
+    width: 120px;
+    margin-right: 10px;
+}
+.friend p{
+    margin-left: 10px;
+}
+/******************End Friends*********************/
+
+/************************Start Profile styling***************************************************/
+/*****************Profile Header/Cover*************************/
+.profile-container{
+    width: 80vw;
+    margin: auto;
+    
+}
+.cover-container{
+    /* width: 100vw; */
+    background: white;
+}
+.profile-info-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding: 20px;
+    border-bottom: 1px solid grey;
+    /* background-image: url('../public/images/bandile-cover.jpg'); */
+}
+.name-friends-container{
+    display: flex;
+    align-items: flex-end;
+
+}
+.name-friends-container .profile-photo{
+    width: 180px;
+    height: 180px;
+    border-radius: 100px;
+
+}
+.name-friends-container .name-friends{
+    margin-left: 30px;
+}
+.add-story-button{
+    background: rgb(16, 85, 223);
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+}
+.edit-profile-button{
+    background: #f2f3f5;
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 8px;
+}
+.arrow-down-button{
+    width: 100px;
+    margin: 0 15px;
+    background: #f2f3f5;
+}
+.tabs-and-button-container{
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 10px 30px 0px;
+    padding: 20px 20px 0px 0px;
+    /* border: 1px solid red; */
+}
+.tabs-container{
+    display: flex;
+    /* border: 1px solid red; */
+}
+.profile-tab{
+    margin-left: 20px;
+    width: 60px;
+    text-align: center;
+}
+.posts{
+    border-bottom: 2px solid rgb(16, 85, 223)
+}
+.more-tab{
+    display: flex;
+}
+/*************End of ProfileCover/Header****************/
+/***************Start Intro Component********************************/
+.intro-container{
+    width: 32vw;
+    background: white;
+    border-radius: 7px;
+    padding: 10px;
+}
+.intro-container h3{
+    margin: 10px 10px;
+}
+.bio{
+    text-align: center;
+}
+.edit-button{
+    width: 95%;
+    background:rgb(199, 196, 196);
+    margin: 10px 10px;
+    padding: 10px;
+    border-radius: 7px;
+    text-align: center;
+    margin: 20px 0px;
+}
+.intro-container .intro-row{
+    display: flex;
+    margin: 20px 0px;
+}
+.intro-container .intro-row p{
+    margin-left: 15px;
+}
+.joined{
+    margin-left: 10px;
+}
+.grid{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 0px 20px;
+}
+/*************status form*******************/
+.profile-status-form{
+    border: 2px solid red;
+}
+/*************end status form*****************/
+/***********Start PostsManager**********************/
+.posts-manager-container{
+    background: white;
+    border-radius: 7px;
+    margin-top: 20px;
+    padding: 10px 20px 0px 20px;
+}
+.posts-manager-grid{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #e5e6e9;
+    align-items: center;
+}
+.views-grid{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.views-grid .button-content{
+    display: flex;
+    align-items: center;
+    padding: 7px;
+}
+.button-one{
+    background:rgb(201, 199, 199);
+    margin-left: 5px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+}
+.tab-one{
+    width: 300px;
+    border-bottom: 2px solid rgb(16, 85, 223);
+}
+.tab-two{
+    width: 300px;
+}
+.tab-one .icon{
+    margin-left: 100px;
+}
+.tab-two .icon{
+    margin-left: 80px;
+}
+.post-frame{
+    /* width: 470.38px; */
+}
