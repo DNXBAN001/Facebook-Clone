@@ -15,7 +15,7 @@ export default function Header(){
                 </form>
             </div>
             <div className="center-nav row">
-                <div><a href="/"><Home className="nav-icon"/></a></div>
+                <div className="home"><a href="/"><Home className="nav-icon"/></a></div>
                 <div><a href="/"><Store className="nav-icon"/></a></div>
                 <div><a href="/"><Groups className="nav-icon"/></a></div>
                 <div><a href="/"><Games className="nav-icon"/></a></div>
