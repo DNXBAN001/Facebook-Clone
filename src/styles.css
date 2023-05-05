@@ -56,7 +56,7 @@
 .center-nav div{
     width: 100px;
     height: 60px;
-    padding-left: 30px;
+    padding-left: 35px;
     padding-top: 15px;
 }
 .center-nav div a:hover{
@@ -141,7 +141,7 @@
 }
 .stories-reels-buttons{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 .stories-reels-buttons .button{
     display: flex;
@@ -150,13 +150,13 @@
     width: 45%;
 }
 .stories-reels-buttons .one{
-    border-bottom: 5px solid rgb(16, 85, 223);
+    border-bottom: 3px solid rgb(16, 85, 223);
 }
 .stories-reels-buttons .button .label{
     margin-left: 120px;
 }
 .stories-reels-buttons .button p{
-    margin-left: 15px;
+    margin-left: 12px;
 }
 .stories-reels-buttons .button:hover{
     background-color:rgb(216, 210, 210);
@@ -166,9 +166,6 @@
     margin-top: 10px;
     /* overflow-x: none; */
     /* position: absolute; */
-}
-.stories-container .stories{
-    
 }
 .story{
     margin-left: 10px;

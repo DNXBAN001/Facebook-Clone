@@ -12,7 +12,7 @@ export default function StatusReels(){
                     <p>Stories</p>
                 </div>
                 <div  className="button">
-                    <VideoSettings className="label"/>
+                    <img src="./images/reels-icon.jpg" width="34" height="34" className="label" alt=""/>
                     <p>Reels</p>
                 </div>
             </div>

@@ -1,5 +1,6 @@
 import data from "../utils/side-menu-data"
-
+import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
+import Icon from '@mui/material/Icon';
 
 export default function LeftSideMenu(props){
 
@@ -16,6 +17,10 @@ export default function LeftSideMenu(props){
     return(
         <div className="side-menu-container">
             {menuItems}
+            <div className="list-item-container" >
+                <ExpandCircleDownIcon fontSize="large" color="grey"/>
+                <p className="label">See more</p>
+            </div>
             <h4 className="shortcuts">
                 Your shortcuts
             </h4>

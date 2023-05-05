@@ -9,6 +9,6 @@ export default [
     {id: 7, icon: "./images/memories-icon.png", label: "Memories"},
     {id: 8, icon: "./images/saved-icon.png", label: "Saved"},
     {id: 9, icon: "./images/pages-icon.png", label: "Pages"},
-    {id: 10, icon: "./images/arrow-down.png", label: "See More"},
+    // {id: 10, icon: "./images/arrow-down.png", label: "See More"},
     
 ]
