@@ -1,5 +1,4 @@
-import { Games, Groups, Home, Menu, Notifications,
-    Search, Store } from "@mui/icons-material";
+import { Menu, Notifications, Search } from "@mui/icons-material";
 
 
 export default function Header(){
@@ -15,10 +14,10 @@ export default function Header(){
                 </form>
             </div>
             <div className="center-nav row">
-                <div className="home"><a href="/"><Home className="nav-icon"/></a></div>
-                <div><a href="/"><Store className="nav-icon"/></a></div>
-                <div><a href="/"><Groups className="nav-icon"/></a></div>
-                <div><a href="/"><Games className="nav-icon"/></a></div>
+                <div className="home"><a href="/"><img src="./images/home-header.png" className="nav-icon" width="35" height="35" alt=""/></a></div>
+                <div><a href="/"><img src="./images/marketplace-header.png" className="nav-icon" width="35" height="35" alt=""/></a></div>
+                <div><a href="/"><img src="./images/groups-header.png" className="nav-icon" width="35" height="35" alt=""/></a></div>
+                <div><a href="/"><img src="./images/feeds-header.png" className="nav-icon" width="35" height="35" alt=""/></a></div>
             </div>
             <div className="right-nav row">
                 <div className="nav-icon-container"><a href="/"><Menu className="nav-icon menu"/></a></div>

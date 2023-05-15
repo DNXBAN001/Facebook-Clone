@@ -2,7 +2,7 @@
 export default [
     {id: 1, icon: "./images/bandile-profile.jpg", label: "Bandile Danxa"},
     {id: 2, icon: "./images/friends-icon.png", label: "Friends"},
-    {id: 3, icon: "./images/most-recent-icon.png", label: "Most Recent"},
+    {id: 3, icon: "./images/most-recent-icon.png", label: "Feeds (Most Recent)"},
     {id: 4, icon: "./images/groups-icon.png", label: "Groups"},
     {id: 5, icon: "./images/marketplace-icon.png", label: "Marketplace"},
     {id: 6, icon: "./images/watch-icon.png", label: "Watch"},

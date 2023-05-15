@@ -35,6 +35,7 @@
     margin-left: 10px;
     font-weight: 400;
     font-size: 25px;
+    position: relative;
 }
 .left-nav .search-form .search-field{
     width: 96.5%;
@@ -46,8 +47,8 @@
 }
 .left-nav .search-form .search-icon{
     position: absolute;
-    top: 20px;
-    left: 88px;
+    top: 9px;
+    left: 8px;
 }
 .center-nav{
     width: 550px;
@@ -150,10 +151,10 @@
     width: 45%;
 }
 .stories-reels-buttons .one{
-    border-bottom: 3px solid rgb(16, 85, 223);
+    border-bottom: 2px solid rgb(16, 85, 223);
 }
 .stories-reels-buttons .button .label{
-    margin-left: 120px;
+    margin-left: 100px;
 }
 .stories-reels-buttons .button p{
     margin-left: 12px;
@@ -164,8 +165,6 @@
 .stories-container{
     display: flex;
     margin-top: 10px;
-    /* overflow-x: none; */
-    /* position: absolute; */
 }
 .story{
     margin-left: 10px;
@@ -174,7 +173,7 @@
 }
 .story .story-img{
     width: 114px;
-    height: 202px;
+    height: 200px;
     border-radius: 10px;
 }
 .story .acc-profile-circle{
@@ -253,15 +252,11 @@
 .post-info{
     margin-left: 15px;
 }
-.post-content{
-    /* margin: 0 10px; */
-}
 .caption{
     margin: 20px 10px 10px;;
 }
 .photo{
     width: 100%;
-    /* border-radius: 12px; */
 }
 .reactions-container{
     display: flex;
@@ -338,7 +333,6 @@
     align-items: end;
     padding: 20px;
     border-bottom: 1px solid grey;
-    /* background-image: url('../public/images/bandile-cover.jpg'); */
 }
 .name-friends-container{
     display: flex;
@@ -478,7 +472,4 @@
 }
 .tab-two .icon{
     margin-left: 80px;
-}
-.post-frame{
-    /* width: 470.38px; */
 }

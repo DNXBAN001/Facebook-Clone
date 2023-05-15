@@ -2,13 +2,13 @@ import { VideoSettings } from "@mui/icons-material";
 import Story from "./Story";
 
 
-export default function StatusReels(){
+export default function StoriesReels(){
 
     return(
         <div className="stories-reels-container">
             <div className="stories-reels-buttons">
                 <div className="button one">
-                    <VideoSettings className="label"/>
+                    <img src="./images/stories-icon.png" className="label" alt=""/>
                     <p>Stories</p>
                 </div>
                 <div  className="button">
