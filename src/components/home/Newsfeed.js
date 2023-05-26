@@ -1,15 +1,14 @@
-import StatusForm from "./StatusForm";
 import StoriesReels from "./StoriesReels";
-import Post from "./Post";
+import StatusForm from "../StatusForm";
+import Post from "../Post";
 
-export default function NewsFeed(){
+export default function Newsfeed(){
 
     return(
         <div className="news-feed-container">
-            <StoriesReels />
+            <StoriesReels/>
             <StatusForm />
             <Post />
         </div>
     )
-
 }

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,700&display=swap');
 
 *{
     margin: 0;
@@ -6,206 +6,259 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
+/*****************Start LoginPage styles**************/
+.loginPage-container{
+    background: #f2f3f5;
+    height: 90vh;
+}
+.loginPage{
+    width: 65%;
+    height: 80%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.headings-container{
+    width: 50%;
+}
+.loginPage h1{
+    color: #1877f2;
+    font-weight: 700;
+    font-size: 60px;
+}
+.loginPage h2{
+    color: #1c1e21;
+    margin-top: 5px;
+    padding: 0 0 20px;
+    font-weight: 400;
+    font-size: 28px;
+}
+.login-form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.login-form-container a{
+    text-decoration: none;
+}
+.login-form{
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 7px;
+    border-bottom: 1px solid #f2f3f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.login-form input{
+    text-indent: 15px;
+    font-size: 17px;
+}
+.email-field input, .password-field input, .login-button{
+    width: 390px;
+    padding: 15px 0;
+    border-radius: 7px;
+    border: 1px solid #f2f3f5;
+    margin-top: 15px;
+}
+.login-button{
+    background: #1877f2;
+    color: #ffffff;
+    padding: 15px 16px;
+    font-weight: 600;
+    font-size: 20px;
+}
+.signup-button{
+    background: #42b72a;
+    color: #ffffff;
+    padding: 16px;
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 17px;
+    border: none;
+    border-radius: 7px;
+}
+/**************End LoginPage styles*********************************/
 
-/*******************Start Header-NavBar*****************************************/
+/******************Start HomePage styles***********************************/
+/******************Start Header styles******************************/
 .header-container{
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid lightgray;
-    position: fixed;
-    top: 0;
-    z-index: 1;
-    width: 100%;
+    height: 60px;
+    padding: 10px 15px;
     background: white;
 }
 .row{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.row a{
-    color: black;
-}
-.left-nav{
-    margin-left: 20px;
+    justify-content: space-around;
 }
 .left-nav .search-form{
     width: 250px;
-    margin-left: 10px;
-    font-weight: 400;
-    font-size: 25px;
     position: relative;
 }
-.left-nav .search-form .search-field{
+.left-nav .search-field{
     width: 96.5%;
     height: 40px;
-    border: none;
-    border-radius: 35px;
-    text-indent: 35px;
-    background: #f2f3f5;
-}
-.left-nav .search-form .search-icon{
-    position: absolute;
-    top: 9px;
-    left: 8px;
-}
-.center-nav{
-    width: 550px;
-    height: 60px;
-}
-.center-nav div{
-    width: 100px;
-    height: 60px;
-    padding-left: 35px;
-    padding-top: 15px;
-}
-.center-nav div a:hover{
-    color: blue;
-}
-.center-nav .home{
-    border-bottom:2px solid rgb(16, 85, 223);
-}
-.right-nav{
-    margin-right: 20px;
-}
-.right-nav .nav-icon-container{
-    margin: 0 4px;
-    background:#f2f3f5;
-    width: 40px;
-    height: 40px;
-    text-align: center;
     border-radius: 20px;
-}
-.right-nav .nav-icon-container .menu, .notifications{
-    margin-top: 7px;
-}
-.right-nav .nav-icon-container .messenger{
-    margin-top: 10px;
-}
-/*************************End of Header styling************************/
-
-/****************Start Main Body***************************************/
-.main-body-container{
-    margin-top: 60px;
-    display: flex;
-    background:#f2f3f5;
-}
-/*****************Start Left Side menu*********************************/
-.side-menu-container{
-    margin-top: 30px;
-    margin-left: 20px;
-    width: 23%;
-    height: 200vh;
-    position: fixed;
-    top: 35px;
-    /* border: 1px solid red; */
-}
-.list-item-container{
-    display: flex;
-    align-items: center;
-    margin-top: 4.5px;
-    padding: 6.5px;
-}
-.list-item-container:hover{
-    background-color:rgb(216, 210, 210);
-}
-.list-item-container .label{
-    margin-left: 20px;
-    font-weight: 550;
+    border: none;
+    background: #f0f2f5;
+    text-indent: 35px;
     font-size: 15px;
 }
-.shortcuts{
-    color: rgb(112, 111, 111);
-    margin-top: 15px;
-    border-top: 1px solid grey;
-    padding-top: 20px;
-}
-.bottom-footer{
-    margin-top: 10px;
-    margin-left: 0;
-    font-size: 14px;
-}
-/**********************End of LeftSideMenu***********************************/
-/******************Start NewsFeed/Post***************************************/
-.news-feed-container{
-    width: 45%;
-    margin-left: 30vw;
-    margin-right: 70px;
-}
-/************* Start StoriesReels**********************/
-.stories-reels-container{
-    margin: 20px 0px;
-    padding: 0.1px;
-    border-radius: 5px;
-    background: white;
-}
-.stories-reels-buttons{
-    display: flex;
-    justify-content: space-evenly;
-}
-.stories-reels-buttons .button{
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    width: 45%;
-}
-.stories-reels-buttons .one{
-    border-bottom: 2px solid rgb(16, 85, 223);
-}
-.stories-reels-buttons .button .label{
-    margin-left: 100px;
-}
-.stories-reels-buttons .button p{
-    margin-left: 12px;
-}
-.stories-reels-buttons .button:hover{
-    background-color:rgb(216, 210, 210);
-}
-.stories-container{
-    display: flex;
-    margin-top: 10px;
-}
-.story{
-    margin-left: 10px;
-    position: relative;
-    z-index: 0;
-}
-.story .story-img{
-    width: 114px;
-    height: 200px;
-    border-radius: 10px;
-}
-.story .acc-profile-circle{
+.left-nav .search-icon{
     position: absolute;
     top: 10px;
     left: 10px;
-    z-index: 0;
-    width: 35px;
-    height: 35px;
-    border: 2px solid rgb(16, 25, 223);
+}
+.center-nav{
+    height: 50px;
+    width: 500px;
+    text-align: center;
+    margin-right: 150px;
+}
+.center-nav .nav-icon{
+    width: 111.59px;
+}
+.center-nav .home{
+    border-bottom: 3px solid rgb(43, 43, 247);
+}
+.center-nav img{
     border-radius: 20px;
 }
-/*************End StoriesReels**********************/
-/************* Start StatusForm*********************/
-.status-form-container{
-    padding: 0.1px;
-    border-radius: 5px;
-    background: white;
+/* .center-nav .home:hover, .marketplace:hover, .groups:hover, .feeds:hover{
+    background: rgb(228, 225, 225); 
+} */
+.right-nav{
+    width: 190px;
+    text-align: center;
 }
-.form{
+.right-nav div{
+    background: #f2f3f5;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+.right-nav .menu-icon, .notifications-icon{
+    margin-top: 7px;
+}
+.right-nav .messenger-icon{
     margin-top: 10px;
 }
-.acc-circle-container{
-    margin-left: 10px;
+.right-nav .acc-photo{
+    border-radius: 20px;
 }
-/* .status-form-container  */
+/***************End of Header styles******************/
+
+/****************MainBody styles****************/
+.main-body-container{
+    background: #f2f3f5;
+    display: flex;
+    justify-content: space-between;
+}
+/******************LeftSideBar styles*************************/
+.menu-items-container{
+    margin-top: 10px;
+    width: 23%;
+}
+.menu-item-container{
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+    padding: 7px 0;
+    font-weight: 500;
+    font-size: 15px;
+}
+.menu-item-container:hover{
+    background: rgb(228, 225, 225);
+}
+.menu-item-container .sidebar-menu-icon{
+    width: 35px;
+    height: 35px;
+    border-radius: 20px;
+}
+.sidebar-menu-icon-container{
+    padding: 0 8px 0 15px;
+}
+.shortcuts-label{
+    /* padding: 5px 15px; */
+    color: #656768;
+}
+.footer-container{
+    font-size: 13.5px;
+    margin-top: 10px;
+    margin-left: 20px;
+    color: #656768;
+}
+/*************End LeftSidebar styles******************/
+
+/*********************Start Newsfeed styles*******************/
+.news-feed-container{
+    width: 45%;
+    margin-top: 25px;
+}
+.stories-reels-container{
+    background: white;
+    border-radius: 10px;
+    /* border: 1px solid red; */
+}
+.stories-reels-tab-container{
+    display: flex;
+    justify-content: space-around;
+}
+.tab{
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    width: 45%;
+}
+.tab-one{
+    border-bottom: 3px solid rgb(0, 81, 255);
+}
+.tab-one p{
+    color:rgb(0, 81, 255)
+}
+.tab-icon{
+    margin-left: 100px;
+}
+.story{
+    position: relative;
+    margin: 15px 5px;
+}
+.story .story-preview-image{
+    border-radius: 10px;
+}
+.story .acc-circle{
+    border-radius: 20px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border: 3px solid rgb(0, 81, 255);
+}
+.story .acc-label{
+    position: absolute;
+    top: 180px;
+    left: 2px;
+    color: white;
+    font-weight: 500;
+    font-size: 13px;
+}
+.stories-container{
+    display: flex;
+}
+/**************Start StatusForm styles**************/
+.status-form-container{
+    padding: 10px 10px 0px 10px;
+    border-radius: 5px;
+    background: white;
+    margin-top: 20px;
+}
 .inline-row{
     display: flex;
     align-items: center;
     width: 100%;
 }
-/* .status-form-container  */
 .status-field input{
     width: 40vw;
     height: 40px;
@@ -214,107 +267,106 @@
     border-radius: 25px;
     text-indent: 15px;
     background: #f2f3f5;
+    color: #656768;
+    font-size: 17px;
 }
-.bottom-buttons{
+.form-buttons{
     display: flex;
     justify-content: space-around;
-    margin: 15px 10px 0;
-    padding: 0px 10px;
+    margin: 15px 0px 0px 0px;
+    padding: 9px 10px;
     border-top: 1px solid #e2e2e2;
 }
-.bottom-buttons div{
+.ilbutton-container{
     display: flex;
     align-items: center;
-    padding: 10px;
-    margin: 6px 0;
+    padding: 8px 10px 8px 35px;
+    /* margin: 6px 0; */
     width: 30%;
     border-radius: 5px;
 }
-.bottom-buttons div p{
+.form-buttons .ilbutton-container p{
     margin-left: 10px;
 }
-.bottom-buttons div:hover{
+.ilbutton-container:hover{
     background-color:#f2f3f5;
 }
-/**************End StatusForm***********************/
-/**************Start Post styling*******************/
+/**************End StatusForm styles***********************/
+
+/******************Start Contacts styles********************/
+.contacts-container{
+    margin-top: 10px;
+    width: 23%;
+}
+.hrline{
+    margin-left: 15px;
+    border-top: 1px solid grey;
+    padding: 15px 10px 5px 10px;
+    display: flex;
+    justify-content: space-between;
+    color: #656768;
+}
+.contacts-header-icons{
+    margin-right: 10px;
+}
+/*******************End Contacts styles****************/
+/*********************End of MainBody styles*****************************/
+/*************End HomePage styles**********************************************/
+
+
+/**********Start Post styles*********************/
 .post-container{
-    margin: 25px 0px;
-    padding: 0.1px;
+    margin-top: 20px;
     border-radius: 5px;
-    background: white;
-    width: 684.3px;
+    background: #ffffff;
 }
 .post-info-container{
     display: flex;
-    margin: 10px;
+    padding: 10px;
 }
 .post-info{
-    margin-left: 15px;
+    margin-left: 10px;
+}
+.post-info .postOwner{
+    font-weight: 500;
+    font-size: 15px;
+    color: #050505;
+}
+.post-info .timePosted-privacy{
+    color: #656768;
+    font-size: 13px;
 }
 .caption{
-    margin: 20px 10px 10px;;
+    padding: 10px;
 }
-.photo{
+.post-image{
     width: 100%;
 }
-.reactions-container{
+.post-stats{
     display: flex;
     justify-content: space-between;
-    margin: 10px 20px;
+    padding: 10px;
+    font-size: 15px;
+    color: #656768;
 }
-.reaction-buttons{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 7px 20px 7px;
-    padding: 3px 0;
-    border-top: 1px solid grey;
-    border-bottom: 1px solid grey;
-}
-.reaction-buttons .reaction-button{
-    display: flex;
-    align-items: center;
-    width: 25%;
-    margin-left: 40px;
-    padding: 5px;
-    border-radius: 10px;
-}
-.reaction-button .reaction-label{
-    margin-left: 10px;
-}
-.comment-post{
-    padding: 4px 0;
-    margin: 0 10px;
-    margin-bottom: 20px;
-}
-.type-comment input{
-    width: 39vw;
-    
-}
-/******************End NewsFeed/Post*********************************************/
-/******************Start Friends********************/
-.friends-container{
-    width: 22%;
-    position: fixed;
-    right: 0;
-}
-.heading-contacts{
+.react-buttons-container{
     display: flex;
     justify-content: space-between;
-    margin-left:10px;
-    border: none;
+    border-top: 1px solid #e2e2e2;
+    border-bottom: 1px solid #e2e2e2;
+    margin: 0px 10px 10px 10px;
+    padding: 2px 30px;
+    color: #656768;
+    font-size: 15px;
 }
-.heading-contacts div{
-    display: flex;
-    justify-content: space-evenly;
-    width: 120px;
-    margin-right: 10px;
+.comment-field{
+    border-top: 1px solid #f2f3f5; 
+    padding: 0 10px;
+    color: #656768;
+    font-weight: 500;
+    font-size: 14px;
 }
-.friend p{
-    margin-left: 10px;
-}
-/******************End Friends*********************/
+
 
 /************************Start Profile styling***************************************************/
 /*****************Profile Header/Cover*************************/
@@ -473,3 +525,10 @@
 .tab-two .icon{
     margin-left: 80px;
 }
+/*******************End Profile styles**************************************************/
+
+
+
+
+
+

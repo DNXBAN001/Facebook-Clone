@@ -1,30 +1,15 @@
 import React from "react";
 import "./styles.css";
-import Header from "./components/Header";
-import LeftSideMenu from "./components/LeftSideMenu";
-import NewsFeed from "./components/NewsFeed";
-import Contacts from "./components/Contacts";
-import Profile from "./components/profile/Profile";
+import HomePage from "./components/home/HomePage";
+import LoginPage from "./components/login/LoginPage";
 
 export default function App() {
+  const [rememberLogin, setRememberLogin] = React.useState(true);
 
-  const [isProfilePage, setIsProfilePage] = React.useState(false);
-
-  function switchPage(id){
-    setIsProfilePage(prevIsProfilePage => {
-      console.log("ID of the element is: "+id)
-      return (!prevIsProfilePage)
-    })
-  }
- 
   return (
     <div className="App">
-      <div>
-        <Header />
-      </div>
-      <div className="main-body-container">
-        {isProfilePage ? (<Profile />): (<><LeftSideMenu changePage={switchPage}/><NewsFeed /><Contacts /></>)}
-      </div>
+      {rememberLogin ? <HomePage />: <LoginPage />}
     </div>
   );
 }
+
