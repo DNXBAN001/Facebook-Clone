@@ -1,10 +1,10 @@
 import FormButtons from "./ILButton";
 import CommentField from "./IconInputForm";
-import data from "../utils/post-ilbuttons";
+import formButtonsData from "../utils/post-ilbuttons";
 
-export default function Post(){
+export default function Post(props){
 
-    const formButtons = data.map(button => (
+    const formButtons = formButtonsData.map(button => (
         <FormButtons key={button.id} buttonIcon={button.buttonIcon} buttonLabel={button.buttonLabel}/>
     ))
 
@@ -12,22 +12,22 @@ export default function Post(){
         <div className="post-container">
             <div className="post-info-container">
                 <div>
-                    <img src="./images/bandile-profile.jpg" width="35" height="35" style={{borderRadius: "20px"}} alt=""/>
+                    <img src={props.profilePhoto} width="35" height="35" style={{borderRadius: "20px"}} alt=""/>
                 </div>
                 <div className="post-info">
-                    <div className="postOwner">Bandile Danxa</div>
-                    <div className="timePosted-privacy">1 day ago · public</div>
+                    <div className="postOwner">{props.writer}</div>
+                    <div className="timePosted-privacy">{props.timePosted}s · {props.privacy}</div>
                 </div>
             </div>
             <div className="caption">
-                Hi there!
+                {props.caption}
             </div>
             <div>
-                <img src="./images/bandile-cover.jpg" className="post-image" alt=""/>
+                <img src={props.photo} className="post-image" alt=""/>
             </div>
             <div className="post-stats">
-                <div>100 likes</div>
-                <div>2 comments</div>
+                <div>{props.likes} likes</div>
+                <div>{props.comments} comment</div>
             </div>
             <div className="react-buttons-container">
                 {formButtons}
@@ -38,3 +38,4 @@ export default function Post(){
         </div>
     )
 }
+

@@ -6,14 +6,14 @@ import Contacts from "./Contacts";
 import Profile from "../profile/Profile";
 
 export default function HomePage(){
-
-    const [isHome, setIsHome] = React.useState(true)
     
     return(
         <>
             <Header />
             <div className="main-body-container">
-                {isHome ? (<><LeftSidebar /><Newsfeed /><Contacts /></>): <Profile/>}
+                <LeftSidebar />
+                <Newsfeed />
+                <Contacts />
             </div>
         </>
     )

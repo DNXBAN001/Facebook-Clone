@@ -89,6 +89,10 @@
     height: 60px;
     padding: 10px 15px;
     background: white;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100vw;
 }
 .row{
     display: flex;
@@ -156,11 +160,13 @@
     background: #f2f3f5;
     display: flex;
     justify-content: space-between;
+    margin-top: 60px;
 }
 /******************LeftSideBar styles*************************/
 .menu-items-container{
     margin-top: 10px;
     width: 23%;
+    position: fixed;
 }
 .menu-item-container{
     display: flex;
@@ -197,6 +203,7 @@
 .news-feed-container{
     width: 45%;
     margin-top: 25px;
+    margin-left: 29vw;
 }
 .stories-reels-container{
     background: white;
@@ -297,6 +304,8 @@
 .contacts-container{
     margin-top: 10px;
     width: 23%;
+    position: fixed;
+    right: 0;
 }
 .hrline{
     margin-left: 15px;
@@ -361,7 +370,7 @@
 }
 .comment-field{
     border-top: 1px solid #f2f3f5; 
-    padding: 0 10px;
+    padding: 0px 10px 10px;
     color: #656768;
     font-weight: 500;
     font-size: 14px;
