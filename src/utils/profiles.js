@@ -15,6 +15,7 @@ export default [
         posts: [
             {
                 id: 1,
+                profilePhoto: "./images/bandile-profile.jpg",
                 writer: "Bandile Danxa",
                 timePosted: 1,
                 privacy: "public",
@@ -40,6 +41,7 @@ export default [
             },
             {
                 id: 2,
+                profilePhoto: "./images/bandile-profile.jpg",
                 writer: "Bandile Danxa",
                 timePosted: 10,
                 privacy: "public",
@@ -65,6 +67,7 @@ export default [
             },
             {
                 id: 3,
+                profilePhoto: "./images/bandile-profile.jpg",
                 writer: "Bandile Danxa",
                 timePosted: 24,
                 privacy: "public",
@@ -90,6 +93,7 @@ export default [
             },
             {
                 id: 4,
+                profilePhoto: "./images/bandile-profile.jpg",
                 writer: "Bandile Danxa",
                 timePosted: 32,
                 privacy: "public",
@@ -115,6 +119,7 @@ export default [
             },
             {
                 id: 5,
+                profilePhoto: "./images/bandile-profile.jpg",
                 writer: "Bandile Danxa",
                 timePosted: 45,
                 privacy: "public",
@@ -155,6 +160,7 @@ export default [
         posts: [
             {
                 id: 6,
+                profilePhoto: "./images/athula-profile.jpg",
                 writer: "Thulas Sweetie",
                 timePosted: 2,
                 privacy: "public",
@@ -180,6 +186,7 @@ export default [
             },
             {
                 id: 7,
+                profilePhoto: "./images/athula-profile.jpg",
                 writer: "Thulas Sweetie",
                 timePosted: 6,
                 privacy: "public",
@@ -205,6 +212,7 @@ export default [
             },
             {
                 id: 8,
+                profilePhoto: "./images/athula-profile.jpg",
                 writer: "Thulas Sweetie",
                 timePosted: 11,
                 privacy: "public",
@@ -230,6 +238,7 @@ export default [
             },
             {
                 id: 9,
+                profilePhoto: "./images/athula-profile.jpg",
                 writer: "Thulas Sweetie",
                 timePosted: 16,
                 privacy: "public",
@@ -255,6 +264,7 @@ export default [
             },
             {
                 id: 10,
+                profilePhoto: "./images/athula-profile.jpg",
                 writer: "Thulas Sweetie",
                 timePosted: 20,
                 privacy: "public",
@@ -280,6 +290,7 @@ export default [
             },
             {
                 id: 11,
+                profilePhoto: "./images/athula-profile.jpg",
                 writer: "Thulas Sweetie",
                 timePosted: 23,
                 privacy: "public",
@@ -305,6 +316,7 @@ export default [
             },
             {
                 id: 12,
+                profilePhoto: "./images/athula-profile.jpg",
                 writer: "Thulas Sweetie",
                 timePosted: 28,
                 privacy: "public",
@@ -330,6 +342,7 @@ export default [
             },
             {
                 id: 13,
+                profilePhoto: "./images/athula-profile.jpg",
                 writer: "Thulas Sweetie",
                 timePosted: 33,
                 privacy: "public",
@@ -355,6 +368,7 @@ export default [
             },
             {
                 id: 14,
+                profilePhoto: "./images/athula-profile.jpg",
                 writer: "Thulas Sweetie",
                 timePosted: 37,
                 privacy: "public",
@@ -380,6 +394,7 @@ export default [
             },
             {
                 id: 15,
+                profilePhoto: "./images/athula-profile.jpg",
                 writer: "Thulas Sweetie",
                 timePosted: 41,
                 privacy: "public",
@@ -420,6 +435,7 @@ export default [
         posts: [
             {
                 id: 16,
+                profilePhoto: "./images/tubba-profile.jpg",
                 writer: "Athule Ngxovu",
                 timePosted: 3,
                 privacy: "public",
@@ -445,6 +461,7 @@ export default [
             },
             {
                 id: 17,
+                profilePhoto: "./images/tubba-profile.jpg",
                 writer: "Athule Ngxovu",
                 timePosted: 8,
                 privacy: "public",
@@ -470,6 +487,7 @@ export default [
             },
             {
                 id: 18,
+                profilePhoto: "./images/tubba-profile.jpg",
                 writer: "Athule Ngxovu",
                 timePosted: 14,
                 privacy: "public",
@@ -495,6 +513,7 @@ export default [
             },
             {
                 id: 19,
+                profilePhoto: "./images/tubba-profile.jpg",
                 writer: "Athule Ngxovu",
                 timePosted: 17,
                 privacy: "public",
@@ -520,6 +539,7 @@ export default [
             },
             {
                 id: 20,
+                profilePhoto: "./images/tubba-profile.jpg",
                 writer: "Athule Ngxovu",
                 timePosted: 22,
                 privacy: "public",
@@ -545,6 +565,7 @@ export default [
             },
             {
                 id: 21,
+                profilePhoto: "./images/tubba-profile.jpg",
                 writer: "Athule Ngxovu",
                 timePosted: 25,
                 privacy: "public",
@@ -570,6 +591,7 @@ export default [
             },
             {
                 id: 22,
+                profilePhoto: "./images/tubba-profile.jpg",
                 writer: "Athule Ngxovu",
                 timePosted: 29,
                 privacy: "public",
@@ -595,6 +617,7 @@ export default [
             },
             {
                 id: 23,
+                profilePhoto: "./images/tubba-profile.jpg",
                 writer: "Athule Ngxovu",
                 timePosted: 34,
                 privacy: "public",
@@ -635,6 +658,7 @@ export default [
         posts: [
             {
                 id: 24,
+                profilePhoto: "./images/aya-profile.jpg",
                 writer: "Ayabonga Veli",
                 timePosted: 4,
                 privacy: "public",
@@ -660,6 +684,7 @@ export default [
             },
             {
                 id: 25,
+                profilePhoto: "./images/aya-profile.jpg",
                 writer: "Ayabonga Veli",
                 timePosted: 7,
                 privacy: "public",
@@ -685,6 +710,7 @@ export default [
             },
             {
                 id: 26,
+                profilePhoto: "./images/aya-profile.jpg",
                 writer: "Ayabonga Veli",
                 timePosted: 12,
                 privacy: "public",
@@ -710,6 +736,7 @@ export default [
             },
             {
                 id: 27,
+                profilePhoto: "./images/aya-profile.jpg",
                 writer: "Ayabonga Veli",
                 timePosted: 15,
                 privacy: "public",
@@ -735,6 +762,7 @@ export default [
             },
             {
                 id: 28,
+                profilePhoto: "./images/aya-profile.jpg",
                 writer: "Ayabonga Veli",
                 timePosted: 19,
                 privacy: "public",
@@ -760,6 +788,7 @@ export default [
             },
             {
                 id: 29,
+                profilePhoto: "./images/aya-profile.jpg",
                 writer: "Ayabonga Veli",
                 timePosted: 27,
                 privacy: "public",
@@ -785,6 +814,7 @@ export default [
             },
             {
                 id: 30,
+                profilePhoto: "./images/aya-profile.jpg",
                 writer: "Ayabonga Veli",
                 timePosted: 30,
                 privacy: "public",
@@ -810,6 +840,7 @@ export default [
             },
             {
                 id: 31,
+                profilePhoto: "./images/aya-profile.jpg",
                 writer: "Ayabonga Veli",
                 timePosted: 35,
                 privacy: "public",
@@ -835,6 +866,7 @@ export default [
             },
             {
                 id: 32,
+                profilePhoto: "./images/aya-profile.jpg",
                 writer: "Ayabonga Veli",
                 timePosted: 38,
                 privacy: "public",
@@ -860,6 +892,7 @@ export default [
             },
             {
                 id: 33,
+                profilePhoto: "./images/aya-profile.jpg",
                 writer: "Ayabonga Veli",
                 timePosted: 42,
                 privacy: "public",
@@ -885,6 +918,7 @@ export default [
             },
             {
                 id: 34,
+                profilePhoto: "./images/aya-profile.jpg",
                 writer: "Ayabonga Veli",
                 timePosted: 44,
                 privacy: "public",
@@ -910,6 +944,7 @@ export default [
             },
             {
                 id: 35,
+                profilePhoto: "./images/aya-profile.jpg",
                 writer: "Ayabonga Veli",
                 timePosted: 46,
                 privacy: "public",
@@ -950,6 +985,7 @@ export default [
         posts: [
             {
                 id: 36,
+                profilePhoto: "./images/chrisie-profile.jpg",
                 writer: "Christen Rumbuza",
                 timePosted: 5,
                 privacy: "public",
@@ -975,6 +1011,7 @@ export default [
             },
             {
                 id: 37,
+                profilePhoto: "./images/chrisie-profile.jpg",
                 writer: "Christen Rumbuza",
                 timePosted: 9,
                 privacy: "public",
@@ -1000,6 +1037,7 @@ export default [
             },
             {
                 id: 38,
+                profilePhoto: "./images/chrisie-profile.jpg",
                 writer: "Christen Rumbuza",
                 timePosted: 13,
                 privacy: "public",
@@ -1025,6 +1063,7 @@ export default [
             },
             {
                 id: 39,
+                profilePhoto: "./images/chrisie-profile.jpg",
                 writer: "Christen Rumbuza",
                 timePosted: 18,
                 privacy: "public",
@@ -1050,6 +1089,7 @@ export default [
             },
             {
                 id: 40,
+                profilePhoto: "./images/chrisie-profile.jpg",
                 writer: "Christen Rumbuza",
                 timePosted: 21,
                 privacy: "public",
@@ -1075,6 +1115,7 @@ export default [
             },
             {
                 id: 41,
+                profilePhoto: "./images/chrisie-profile.jpg",
                 writer: "Christen Rumbuza",
                 timePosted: 26,
                 privacy: "public",
@@ -1100,6 +1141,7 @@ export default [
             },
             {
                 id: 42,
+                profilePhoto: "./images/chrisie-profile.jpg",
                 writer: "Christen Rumbuza",
                 timePosted: 31,
                 privacy: "public",
@@ -1125,6 +1167,7 @@ export default [
             },
             {
                 id: 43,
+                profilePhoto: "./images/chrisie-profile.jpg",
                 writer: "Christen Rumbuza",
                 timePosted: 36,
                 privacy: "public",
@@ -1150,6 +1193,7 @@ export default [
             },
             {
                 id: 44,
+                profilePhoto: "./images/chrisie-profile.jpg",
                 writer: "Christen Rumbuza",
                 timePosted: 39,
                 privacy: "public",
@@ -1175,6 +1219,7 @@ export default [
             },
             {
                 id: 45,
+                profilePhoto: "./images/chrisie-profile.jpg",
                 writer: "Christen Rumbuza",
                 timePosted: 43,
                 privacy: "public",
@@ -1200,6 +1245,7 @@ export default [
             },
             {
                 id: 46,
+                profilePhoto: "./images/chrisie-profile.jpg",
                 writer: "Christen Rumbuza",
                 timePosted: 40,
                 privacy: "public",

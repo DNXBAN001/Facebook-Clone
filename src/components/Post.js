@@ -16,7 +16,7 @@ export default function Post(props){
                 </div>
                 <div className="post-info">
                     <div className="postOwner">{props.writer}</div>
-                    <div className="timePosted-privacy">{props.timePosted}s · {props.privacy}</div>
+                    <div className="timePosted-privacy">{props.timePosted}s ago · {props.privacy}</div>
                 </div>
             </div>
             <div className="caption">
