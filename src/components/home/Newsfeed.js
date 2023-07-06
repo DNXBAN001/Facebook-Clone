@@ -26,9 +26,7 @@ export default function Newsfeed(){
 
             }
         }
-
         return sortedList;
-
     }
 
     const sortedPostsList = sortPostsList(unorderedPostsList);
