@@ -12,9 +12,8 @@ export default function Newsfeed(){
         }
     }
 
-    function sortPostsList(unorderedPostsList){
-
-        let sortedList = unorderedPostsList;
+    const sortedPostsList = (unsortedLists) => {
+        let sortedList = unsortedLists;
         let tempVar = 0;
         for(let i = 0; i < sortedList.length; i++){
             for(let j = 1; j < (sortedList.length-i); j++){
@@ -23,15 +22,12 @@ export default function Newsfeed(){
                     sortedList[j-1] = sortedList[j];
                     sortedList[j] = tempVar;
                 }
-
             }
         }
         return sortedList;
     }
 
-    const sortedPostsList = sortPostsList(unorderedPostsList);
-
-    const postsList = sortedPostsList.map(post => (
+    const postsList = sortedPostsList(unorderedPostsList).map(post => (
             <Post key={post.id}
                 profilePhoto={post.profilePhoto}
                 writer={post.writer}

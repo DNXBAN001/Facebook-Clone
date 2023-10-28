@@ -18,4 +18,4 @@ const personSchema = new mongoose.Schema({
 })
 
 //export the person Schema to be utilized by the relevant routes
-module.exports = mongoose.model("Profile", personSchema);
+module.exports = mongoose.model("profile", personSchema);

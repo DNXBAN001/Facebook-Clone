@@ -1,2 +1,12 @@
 GET http://127.0.0.1:5000/api/profiles
 Content-Type: application/json
+
+###
+POST http://127.0.0.1:5000/api/profiles
+Content-Type: application/json
+
+{
+    "firstName": "Ayanda",
+    "lastName": "Capuke",
+    "qualification": "Industrial Engineering"
+}

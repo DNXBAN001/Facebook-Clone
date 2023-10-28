@@ -11,7 +11,10 @@ const mongoose = require("mongoose");
 const app = express();
 
 //require the profiles route middleware
-const profiles = require("./routes/people");
+const people = require("./routes/people");
+
+//use public folder asour static assets middleware
+// app.use(express.static("./public"))
 
 //use express.json middleware for the server to accept json data
 app.use(express.json());
@@ -21,13 +24,13 @@ app.use(express.urlencoded({extended: false}));
 //establish databse connection using mongoose\
 const url = "mongodb://127.0.0.1/Alien"
 mongoose.connect(url, {useNewUrlParser: true})
-const con = mongoose.connection;
+const con = mongoose.connection
 con.on("open", () => {
     console.log("Database connection is established...")
 })
 
 //use the people.js file as middleware for /api/profiles
-app.use("/api/profiles", profiles);
+app.use("/api/profiles", people);
 
 //initialize PORT number
 const port = process.env.PORT || 5000;
