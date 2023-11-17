@@ -5,8 +5,10 @@ import Newsfeed from "./Newsfeed";
 import Contacts from "./Contacts";
 // import Profile from "../profile/Profile";
 
-export default function HomePage(){
+export default function HomePage(props){
     
+    console.log(props)
+
     return(
         <>
             <Header />

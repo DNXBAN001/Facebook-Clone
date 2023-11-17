@@ -5,10 +5,10 @@ export default function LoginForm(){
         <div className="login-form-container">
             <form className="login-form">
                 <div className="email-field">
-                    <input type="text" placeholder="Email address or phone number"/>
+                    <input id="username" name="username" autoComplete="false" type="text" placeholder="Email address or phone number"/>
                 </div>
                 <div className="password-field">
-                    <input type="password" placeholder="Password"/>
+                    <input id="userPassword"name="userPassword" autoComplete="false" type="password" placeholder="Password"/>
                 </div>
                 <button type="submit" className="login-button btn" name="Submit">
                     Log in
