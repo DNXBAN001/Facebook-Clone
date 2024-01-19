@@ -1,41 +1,42 @@
-//require express
 const express = require("express");
-
-//require config dotenv
-require('dotenv').config();
-
-//require mongoose
-const mongoose = require("mongoose");
-
-//initialize app using express()
 const app = express();
+const cors = require("cors");
+const mongoose = require("mongoose")
 
-//require the profiles route middleware
-const people = require("./routes/people");
+//provides express middleware that can enable calls with different options
+//Makes it easy say for example ypu want to access something outside your server
+app.use(cors());
 
-//use public folder asour static assets middleware
-// app.use(express.static("./public"))
+//allow our server to send and receive json
+app.use(express.json())
 
-//use express.json middleware for the server to accept json data
-app.use(express.json());
-//use express.urlencoded() middleware for our server to accept form data
-app.use(express.urlencoded({extended: false}));
+//set public folder to be the default directory for assets
+app.use(express.static("./public"))
 
-//establish databse connection using mongoose\
-const url = "mongodb://127.0.0.1/Alien"
-mongoose.connect(url, {useNewUrlParser: true})
-const con = mongoose.connection
+//allow our server to receive form data
+app.use(express.urlencoded({extended: false}))
+
+
+//Setup database connection
+const url = "mongodb://127.0.0.1/Facebook"
+mongoose.connect(url, { useNewUrlParser: true })
+const con = mongoose.connection;
 con.on("open", () => {
     console.log("Database connection is established...")
 })
 
-//use the people.js file as middleware for /api/profiles
-app.use("/api/profiles", people);
+//require the /api/profiles router
+const profiles = require("./routes/profiles");
+app.use("/api/profiles", profiles);
 
-//initialize PORT number
+//require the /api/posts router 
+const posts = require("./routes/posts");
+app.use("/api/posts", posts)
+
+//set port to be used
+require("dotenv").config();
 const port = process.env.PORT || 5000;
 
-//make server to listen for any request on the particular 
 app.listen(port, () => {
-    console.log(`Server is listening on port ${port}...`)
+    console.log("Server is running on port..."+port)
 })

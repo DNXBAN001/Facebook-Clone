@@ -1,42 +1,45 @@
+import React from "react";
 import StoriesReels from "./StoriesReels";
 import StatusForm from "../StatusForm";
 import Post from "../Post";
-import profilesData from "../../utils/profiles";
+// import profilesData from "../../utils/profiles";
+import axios from "axios";
 
 export default function Newsfeed(){
 
-    let unorderedPostsList = [];
-    for(let i = 0; i < profilesData.length; i++){
-        for(let j = 0; j < profilesData[i].posts.length; j++){
-            unorderedPostsList.push(profilesData[i].posts[j]);
-        }
-    }
+    const [posts, setPosts] = React.useState([])
+    // const [reactions, setReactions] = React.useState(0)
 
-    const sortedPostsList = (unsortedLists) => {
-        let sortedList = unsortedLists;
-        let tempVar = 0;
-        for(let i = 0; i < sortedList.length; i++){
-            for(let j = 1; j < (sortedList.length-i); j++){
-                if(sortedList[j-1].timePosted > sortedList[j].timePosted){
-                    tempVar = sortedList[j-1];
-                    sortedList[j-1] = sortedList[j];
-                    sortedList[j] = tempVar;
-                }
-            }
+    React.useEffect( () => {
+        // axios.get("http://localhost:5000/api/posts")
+        //     .then(res => {
+        //         setPosts(res.data.data)
+        //     })
+        const fetchData = async () => {
+            const response = await axios.get("http://localhost:5000/api/posts")
+            const postsData = response.data.data
+            setPosts(postsData)
         }
-        return sortedList;
-    }
+        fetchData()
+    }, [])
+    
+    // function handleReactions(id){
+    //     setReactions(prevReactions => {
+    //         if
+    //     })
+    // }
 
-    const postsList = sortedPostsList(unorderedPostsList).map(post => (
-            <Post key={post.id}
-                profilePhoto={post.profilePhoto}
-                writer={post.writer}
+    const postsList = posts.map(post => (
+            <Post key={post._id}
+                id={post._id}
+                profilePhoto={post.postOwnerProfilePhoto}
+                writer={post.postOwner}
                 timePosted={post.timePosted}
                 privacy={post.privacy}
                 caption={post.caption}
-                photo={post.photo}
-                likes={post.reactions.likes}
-                comments={post.comments.length}
+                photo={post.files}
+                likes={post.reactions}
+                comments={post.comments}
         />
     ))
 

@@ -7,7 +7,7 @@ import Contacts from "./Contacts";
 
 export default function HomePage(props){
     
-    console.log(props)
+    // console.log(props)
 
     return(
         <>

@@ -1,12 +1,13 @@
 import MenuItem from "../MenuItem";
 import data from "../../utils/side-menu-data";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { Link } from "react-router-dom";
 
 export default function LeftSidebar(){
 
-    const menuItems = data.map(menuItem => (
-        <MenuItem key={menuItem.id} icon={menuItem.icon} label={menuItem.label}/>
-    ))
+    const menuItems = data.map(menuItem => {
+        return <MenuItem key={menuItem.id} icon={menuItem.icon} label={menuItem.label}/>   
+    })
 
     return(
         <div className="menu-items-container">
@@ -27,7 +28,7 @@ export default function LeftSidebar(){
                     <img src="./images/traffic-motorbike-icon.png" className="sidebar-menu-icon" alt=""/></div>
                 <p className="menu-label">Traffic Motorbike</p>
             </div>
-            <div className="footer-container"><p>Privacy · Terms  · Advertising  · Ad Choices   · Cookies  ·<br/>  More · Meta © 2023</p></div>
+            <div className="footer-container"><p>Privacy · Terms  · Advertising  · Ad Choices   · Cookies  ·<br/>  More · Meta © 2024</p></div>
         </div>
     )
 }
