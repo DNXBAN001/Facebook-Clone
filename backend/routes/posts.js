@@ -6,7 +6,7 @@ const postSchema = require("../models/post");
 
 
 /**
- * Add new post  /api/posts/create
+ * Add new post  /posts/create
  */
 router.route("/create").post( async (req, res) => {
     const { postOwner, postOwnerProfilePhoto, timePosted,
@@ -24,7 +24,7 @@ router.route("/create").post( async (req, res) => {
 })
 
 /** 
- * Get all posts from the database /api/posts
+ * Get all posts from the database /posts
  */
 router.route("/").get( async (req, res) => {
     try{
@@ -36,7 +36,7 @@ router.route("/").get( async (req, res) => {
 })
 
 /** 
- * Get post by id /api/post/:id
+ * Get post by id /posts/:id
 */
 router.route("/:id").get( async (req, res) => {
     const { id } = req.params
@@ -49,7 +49,7 @@ router.route("/:id").get( async (req, res) => {
 })
 
 /**
- * Edit post by id /api/post/:id
+ * Edit post by id /posts/:id
  */
 router.route("/:id").put( async (req, res) => {
     const { id } = req.params
@@ -68,13 +68,13 @@ router.route("/:id").put( async (req, res) => {
 })
 
 /**
- * Delete post by id
+ * Delete post by id /posts/:id
  */
 router.route("/:id").delete( async (req, res) => {
     const { id } = req.params
     try{
-        await postSchema.findByIdAndDelete(id)
-        res.status(201).json({success: true, msg: "Post deleted successfully..."})
+        await postSchema.findByIdAndRemove(id)
+        res.status(200).json({success: true, msg: "Post deleted successfully..."})
     }catch(err){
         res.status(400).json({success: false, msg: err})
     }

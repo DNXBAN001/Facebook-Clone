@@ -51,13 +51,28 @@ router.route("/:id").get( async (req, res) => {
 })
 
 /**
- * Edit profile by id
- * /
-router.route("/:id").put( async (req, res) => {
+ * Edit profile by id /api/profiles/update/:id
+ */
+router.route("/update/:id").put( async (req, res) => {
     const { id } = req.params
-    const {}
+    const { password, firstName, lastName, 
+        profilePhoto, coverPhoto, biography, relationshipStatus } = req.body
+    try{
+        const profile = await profileSchema.findById(id)
+        profile.password = password
+        profile.firstName = firstName
+        profile.lastName = lastName
+        profile.profilePhoto = profilePhoto
+        profile.coverPhoto = coverPhoto
+        profile.biography = biography
+        profile.relationshipStatus = relationshipStatus
+        const updatedProfile = await profile.save()
+        res.status(200).json({success: true, msg: "Profile updated successfully..."})
+    }catch(err){
+        res.status(400).json({success: false, msg: err})
+    }
 })
-*/
+
 
 /**
  * Delete profile by id /api/profiles/:id

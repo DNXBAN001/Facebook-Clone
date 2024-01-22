@@ -1,9 +1,5 @@
-###Get all profiles that are in the database
-GET http://127.0.0.1:5000/api/profiles
-Content-Type: application/json
-
-### Create profile /api/profiles/create
-POST http://127.0.0.1:5000/api/profiles/create
+### Create profile /profiles/create
+POST http://127.0.0.1:5000/profiles/create
 Content-Type: application/json
 
 {
@@ -17,21 +13,41 @@ Content-Type: application/json
     "joined": "2012",
     "relationshipStatus": "single"
 }
+###Get all profiles that are in the database /profiles/:id
+GET http://127.0.0.1:5000/profiles
+Content-Type: application/json
 
-###Get profile by id
-GET http://localhost:5000/api/profiles/65952f4973e134a359e6c501
+###Get profile by id /profiles/:id
+GET http://localhost:5000/profiles/65aed6d2082122cc1df04c33
+Content-Type: application/json
 
-/////////////////////////////////////////////////////////////////
-### Create post /api/posts/create
-POST http://localhost:5000/api/posts/create
+###Edit profile by id /profiles/update/:id
+PUT http://localhost:5000/profiles/update/65aed6d2082122cc1df04c33
 Content-Type: application/json
 
 {
-    "postOwner": "Thuthula Mela",
+    "username": "athula@gmail.com",
+    "password": "0123456789",
+    "firstName": "Thulas",
+    "lastName": "Sweetie",
+    "profilePhoto": "./images/athula-profile.jpg",
+    "coverPhoto": "./images/athula-cover.jpg",
+    "biography": "I've got a dream and commited to defending it...",
+    "joined": "2012",
+    "relationshipStatus": "single"
+}
+
+/////////////////////////////////////////////////////////////////
+### Create post /posts/create
+POST http://localhost:5000/posts/create
+Content-Type: application/json
+
+{
+    "postOwner": "Bandile Danxa",
     "postOwnerProfilePhoto": "/images/bandile-profile.jpg",
     "timePosted": "50",
     "privacy": "friends",
-    "caption": "Hi there",
+    "caption": "Beautiful day",
     "files": "/images/bandile1.jpg",
     "reactions": 100,
     "comments": "Cool...",
@@ -39,20 +55,29 @@ Content-Type: application/json
 }
 
 ###Get all posts that are in the database /api/posts
-GET http://localhost:5000/api/posts
+GET http://localhost:5000/posts
+Content-Type: application/json
 
-###Get post by id /api/posts/:id
-GET http://localhost:5000/api/posts/6597f2a708cada00b1e1a3fa
+###Get post by id /posts/:id
+GET http://localhost:5000/posts/65aede541051fcac7209e49c
+Content-Type: application/json
 
-###Edit post by id /api/posts/:id
-PUT http://localhost:5000/api/posts/6597f2a708cada00b1e1a3fa
+###Edit post by id /posts/:id
+PUT http://localhost:5000/posts/65aede541051fcac7209e49c
 Content-Type: application/json
 
 {
+    "postOwner": "Thulas Sweetie",
+    "postOwnerProfilePhoto": "/images/athula-profile.jpg",
+    "timePosted": "50",
     "privacy": "friends",
-    "caption": "What a lovely day",
-    "files": "/images/athula2.jpg"
+    "caption": "Beautiful day at the beach",
+    "files": "/images/athula1.jpg",
+    "reactions": 100,
+    "comments": "Cute...",
+    "shares": 6
 }
 
-###Delete post by id
-DELETE http://localhost:5000/api/posts/659ed5d0ef849dcae738ce61
+###Delete post by id /posts/:id
+DELETE http://localhost:5000/posts/65aede541051fcac7209e49c
+Content-Type: application/json

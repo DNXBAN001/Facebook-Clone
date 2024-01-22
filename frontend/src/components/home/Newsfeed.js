@@ -2,7 +2,6 @@ import React from "react";
 import StoriesReels from "./StoriesReels";
 import StatusForm from "../StatusForm";
 import Post from "../Post";
-// import profilesData from "../../utils/profiles";
 import axios from "axios";
 
 export default function Newsfeed(){
@@ -11,12 +10,12 @@ export default function Newsfeed(){
     // const [reactions, setReactions] = React.useState(0)
 
     React.useEffect( () => {
-        // axios.get("http://localhost:5000/api/posts")
+        // axios.get("http://localhost:5000/posts")
         //     .then(res => {
         //         setPosts(res.data.data)
         //     })
         const fetchData = async () => {
-            const response = await axios.get("http://localhost:5000/api/posts")
+            const response = await axios.get("http://localhost:5000/posts")
             const postsData = response.data.data
             setPosts(postsData)
         }

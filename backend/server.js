@@ -27,11 +27,11 @@ con.on("open", () => {
 
 //require the /api/profiles router
 const profiles = require("./routes/profiles");
-app.use("/api/profiles", profiles);
+app.use("/profiles", profiles);
 
 //require the /api/posts router 
 const posts = require("./routes/posts");
-app.use("/api/posts", posts)
+app.use("/posts", posts)
 
 //set port to be used
 require("dotenv").config();
