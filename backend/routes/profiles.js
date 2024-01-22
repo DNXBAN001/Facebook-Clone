@@ -75,7 +75,7 @@ router.route("/update/:id").put( async (req, res) => {
 
 
 /**
- * Delete profile by id /api/profiles/:id
+ * Delete profile by id /profiles/:id
  */
 router.route("/:id").delete( async (req, res) => {
     const { id } = req.params

@@ -3,13 +3,13 @@ POST http://127.0.0.1:5000/profiles/create
 Content-Type: application/json
 
 {
-    "username": "athula@gmail.com",
+    "username": "bandile@gmail.com",
     "password": "1234567890",
-    "firstName": "Thulas",
-    "lastName": "Sweetie",
-    "profilePhoto": "./images/athula-profile.jpg",
-    "coverPhoto": "./images/athula-cover.jpg",
-    "biography": "I've got a dream and commited to defending it...",
+    "firstName": "Bandile",
+    "lastName": "Danxa",
+    "profilePhoto": "./images/bandile-profile.jpg",
+    "coverPhoto": "./images/bandile-cover.jpg",
+    "biography": "Smooth seas do not make good sailors",
     "joined": "2012",
     "relationshipStatus": "single"
 }
@@ -27,7 +27,7 @@ Content-Type: application/json
 
 {
     "username": "athula@gmail.com",
-    "password": "0123456789",
+    "password": "1234567890",
     "firstName": "Thulas",
     "lastName": "Sweetie",
     "profilePhoto": "./images/athula-profile.jpg",
@@ -36,6 +36,9 @@ Content-Type: application/json
     "joined": "2012",
     "relationshipStatus": "single"
 }
+
+###Delete profile by id /profiles/:id
+DELETE http://localhost:5000/profiles/65aee1f2765b8a86ca1b26a2
 
 /////////////////////////////////////////////////////////////////
 ### Create post /posts/create
