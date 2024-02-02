@@ -6,9 +6,9 @@ const postSchema = require("../models/post");
 
 
 /**
- * Add new post  /posts/create
+ * Add new post  /posts/add
  */
-router.route("/create").post( async (req, res) => {
+router.route("/add").post( async (req, res) => {
     const { postOwner, postOwnerProfilePhoto, timePosted,
         privacy, caption, files, reactions, comments, shares} = req.body
     try{
@@ -24,7 +24,7 @@ router.route("/create").post( async (req, res) => {
 })
 
 /** 
- * Get all posts from the database /posts
+ * Get all posts  /posts
  */
 router.route("/").get( async (req, res) => {
     try{

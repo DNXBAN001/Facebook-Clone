@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 export default function LoginForm(){
 
@@ -14,9 +15,11 @@ export default function LoginForm(){
                     Log in
                 </button><br/>
                 <div className="forgot-password"><a href="/">Forgot password</a></div>
-                <button type="submit" className="signup-button btn" name="Submit">
-                    Create new account
-                </button><br/>
+                <Link to="/add">
+                    <button className="signup-button btn" name="Submit">
+                        Create new account
+                    </button><br/>
+                </Link>    
             </form>
             <div className="bottom-txt">
                 <span><a href="/">Create a Page</a></span> for a celebrity, brand or business.

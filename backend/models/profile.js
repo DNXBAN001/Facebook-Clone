@@ -26,6 +26,13 @@ const profileSchema = new mongoose.Schema({
     },
     dateOfBirth: {
         type: String,
+        required: true,
+        trim: true
+    },
+    gender: {
+        type: String,
+        trim: true,
+        required: true
     },
     profilePhoto: {
         type: String,

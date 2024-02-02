@@ -8,14 +8,14 @@ const profileSchema = require("../models/profile");
 
 
 /**
- * Create new profile  /api/profiles/create
+ * Create new profile  /profiles/add
  */
-router.route("/create").post( async (req, res) => {
-    const { username, password, firstName, lastName, 
+router.route("/add").post( async (req, res) => {
+    const { username, password, firstName, lastName, dateOfBirth, gender,
         profilePhoto, coverPhoto, biography, joined, relationshipStatus } = req.body
     try{
         const profile = new profileSchema({
-            username, password, firstName, lastName, 
+            username, password, firstName, lastName, dateOfBirth, gender,
             profilePhoto, coverPhoto, biography, joined, relationshipStatus
         })
         const newProfile = await profile.save()
@@ -26,7 +26,7 @@ router.route("/create").post( async (req, res) => {
 })
 
 /**
- * Get all profiles that are in the database  /api/profiles
+ * Get all profiles   /profiles
  */
 router.route("/").get( async (req, res) => {
     try{
@@ -38,7 +38,7 @@ router.route("/").get( async (req, res) => {
 })
 
 /**
- * Get profile by id /api/profiles/:id
+ * Get profile by id /profiles/:id
  */
 router.route("/:id").get( async (req, res) => {
     const { id } = req.params
@@ -51,7 +51,7 @@ router.route("/:id").get( async (req, res) => {
 })
 
 /**
- * Edit profile by id /api/profiles/update/:id
+ * Edit profile by id /profiles/update/:id
  */
 router.route("/update/:id").put( async (req, res) => {
     const { id } = req.params

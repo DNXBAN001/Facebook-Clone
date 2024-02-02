@@ -80,8 +80,95 @@
     border-radius: 7px;
 }
 /**************End LoginPage styles*********************************/
+/***************Signup Form*********************************/
+.signup-page{
+    background-image: url('./utils/fb-login-page.PNG');
+    background-color: #ffffff;
+    height: 100vh;
+    opacity: 10;
+}
+.signup-form-container{
+    width: 29%;
+    margin: 140px auto;
+    border: 1px solid rgb(168, 167, 167);
+    background: #fff;
+    /* margin-top: 150px; */
+}
+.head-elements{
+    display: flex;
+    justify-content: space-between;
+}
+.form-heading{
+    margin: 5px 0px 15px 15px;
+}
+.form-heading p{
+    font-size: 15px;
+    color:rgb(168, 167, 167);
+    margin-top: 5px;
+}
+.signup-form input{
+    font-size: 16px;
+    height: 40px;
+    margin-left: 12px;
+    margin-top: 10px;
+    text-indent: 15px;
+    border-radius: 5px;
+    border: 1px solid rgb(168, 167, 167);
+}
+.signup-form .name-input{
+    width: 44%;
+    margin: 14px 12px 5px 12px;
+}
+.email-password-inputs{
+    width: 93.5%;
+}
+.signup-form .static-inputs{
+    background: rgb(247, 245, 245)
+}
+.signup-form .dob{
+    width: 30%;
+    height: 40px;
+    margin-right: 8px;
+    font-size: 16px;
+}
+.signup-form .day{
+    margin-left: 12px;
+}
+.signup-form fieldset{
+    border: none;
+    display: flex;
+    justify-content: space-around;
+    border-radius:  5px;
+}
+.gender-radio{
+    border: 1px solid rgb(168, 167, 167);
+    width: 28%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+}
+.gender-radio label{
+    margin-left: 12px;
+}
+.gender-radio .gender-input{
+    margin-right: 12px;
+}
+.signup-form .submit-btn{
+    width: 45%;
+    font-weight: 600;
+    font-size: 20px;
+    color: #fff;
+    background-color: #42b72a;
+    border: none;
+    padding: 8px 15px;
+    margin-top: 20px;
+    margin-left: 125px;
+    margin-bottom: 20px;
+}
+/***************End Signup**********************************/
 
-/******************Start HomePage styles***********************************/
+/******************Start HomePage styles**********************************************/
 /******************Start Header styles******************************/
 .header-container{
     display: flex;

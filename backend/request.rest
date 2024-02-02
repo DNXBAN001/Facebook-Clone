@@ -1,5 +1,5 @@
 ### Create profile /profiles/create
-POST http://127.0.0.1:5000/profiles/create
+POST http://127.0.0.1:5000/profiles/add
 Content-Type: application/json
 
 {
@@ -7,6 +7,8 @@ Content-Type: application/json
     "password": "1234567890",
     "firstName": "Bandile",
     "lastName": "Danxa",
+    "dateOfBirth": "12/05/1997",
+    "gender": "male",
     "profilePhoto": "./images/bandile-profile.jpg",
     "coverPhoto": "./images/bandile-cover.jpg",
     "biography": "Smooth seas do not make good sailors",
@@ -42,18 +44,18 @@ DELETE http://localhost:5000/profiles/65aee1f2765b8a86ca1b26a2
 
 /////////////////////////////////////////////////////////////////
 ### Create post /posts/create
-POST http://localhost:5000/posts/create
+POST http://localhost:5000/posts/add
 Content-Type: application/json
 
 {
-    "postOwner": "Bandile Danxa",
-    "postOwnerProfilePhoto": "/images/bandile-profile.jpg",
+    "postOwner": "Thulas Sweetie",
+    "postOwnerProfilePhoto": "/images/athula-profile.jpg",
     "timePosted": "50",
     "privacy": "friends",
-    "caption": "Beautiful day",
-    "files": "/images/bandile1.jpg",
+    "caption": "Degree bagged",
+    "files": "/images/athula1.jpg",
     "reactions": 100,
-    "comments": "Cool...",
+    "comments": 5,
     "shares": 6
 }
 
