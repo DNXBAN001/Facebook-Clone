@@ -1,9 +1,8 @@
 import React from "react";
-import { Navigate } from "react-router-dom";
 import { calendarData } from "../../utils/calendar"
 import axios from "axios";
 import ClearIcon from '@mui/icons-material/Clear';
-import backgroundImage from "../../utils/fb-login-page.PNG"
+import { Link } from "react-router-dom";
 
 export default function SignupPage(){
 
@@ -20,6 +19,7 @@ export default function SignupPage(){
         month: "",
         year: ""
     })
+    // const [errorMsgs, setErrorMsgs] = React.useState([])
 
     function handleChange(event){
         const {name, type, value, checked} = event.target
@@ -44,16 +44,28 @@ export default function SignupPage(){
     function handleSubmit(event){
         event.preventDefault()
         submitToAPI(formData)
-        setTimeout(() => {
-            window.location = "/" //direct user back to home page after submitting the form data
-        }, 5000);
+        // setTimeout(() => {
+        //     window.location = "/" //direct user back to home page after submitting the form data
+        // }, 5000);
          
     }
 
-    function submitToAPI(formData){
-        axios.post("http://localhost:5000/profiles/add", formData)
-            .then(res => console.log(formData))
+    async function submitToAPI(formData){
+        const res = await axios.get("http://localhost:5000/profiles")
+        const profiles = res.data.data
+        profiles.map(profile => {
+            if(profile.username === formData.username){
+                alert("Username already exist...Try using a different email")
+            }
+        })
+        await axios.post("http://localhost:5000/profiles/add", formData)
     }
+
+    // function inputValidation(formData){
+    //    if(!formData.firstName){
+    //         return 
+    //    }
+    // }
 
     return (
         <div className="signup-page">
@@ -64,7 +76,7 @@ export default function SignupPage(){
                         <h1>Sign Up</h1>
                         <p>It's quick and easy</p>
                     </div>
-                    <div><ClearIcon /></div>
+                    <div><Link to="/login"><ClearIcon /></Link></div>
                 </div>
                 
                 <hr/>
@@ -78,7 +90,7 @@ export default function SignupPage(){
                     />
                     <input type="text" 
                         placeholder="Last Name"
-                        value={formData.lastName} 
+                        value={formData.lastName}
                         name="lastName" 
                         onChange={handleChange} 
                         className="name-input static-inputs"
@@ -205,7 +217,6 @@ export default function SignupPage(){
                     <input type="submit" 
                         className="submit-btn"
                         value="Sign Up"  
-                        onChange={handleChange} 
                     /><br/>
                 </form>
             </div>

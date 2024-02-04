@@ -15,7 +15,7 @@ export default function LoginForm(){
                     Log in
                 </button><br/>
                 <div className="forgot-password"><a href="/">Forgot password</a></div>
-                <Link to="/add">
+                <Link to="/signup">
                     <button className="signup-button btn" name="Submit">
                         Create new account
                     </button><br/>
