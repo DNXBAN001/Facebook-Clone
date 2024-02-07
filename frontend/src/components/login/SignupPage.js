@@ -54,20 +54,12 @@ export default function SignupPage(){
     }
 
     async function submitToAPI(formData){
-        // const res = await axios.get("http://localhost:5000/profiles")
-        // const profiles = res.data.data
-        // profiles.map(profile => {
-        //     if(profile.username === formData.username){
-        //         alert("Username already exist...Try using a different email")
-        //     }
-        // })
         const response = await axios.post("http://localhost:5000/profiles/signup", formData)
-        console.log("Immediate code...")
         if(response.data.success){
             setIsSignupSuccess(response.data.success)//will help decide whether to redirect user or keep them on the same page
         }
         else{
-            await setUsernameExist(!response.data.success)
+            setUsernameExist(!response.data.success)
         }
         setTimeout(() => {
             if(usernameExist){

@@ -40,6 +40,35 @@ router.route("/signup").post( async (req, res) => {
 })
 
 /**
+ * Login user  /profiles/login
+ */
+router.route("/login").post( async (req, res) => {
+    const { username, password } = req.body
+    let userFound = false
+    const users = await profileSchema.find()
+    const user = users.filter(user => {
+        if(user.username === username){
+            userFound = true
+            return user
+        }
+    })
+    if(!userFound){
+        return res.json({success: false, msg: "Cannot find user..."})
+    }
+    try{
+        if(user[0].password === password){
+            res.status(200).json({success: true, msg: "Login was successful..."})
+        }else if(password.length === 0){
+            res.json({success: false, msg: "Password cannot be blank"})
+        }else{
+            res.json({success: false, msg: "Username and password do not match"})
+        }
+    }catch(err){
+        res.status(400).json({success: false, msg: err})
+    }
+})
+
+/**
  * Get all profiles   /profiles
  */
 router.route("/").get( async (req, res) => {

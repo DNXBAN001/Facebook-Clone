@@ -3,18 +3,29 @@ POST http://127.0.0.1:5000/profiles/signup
 Content-Type: application/json
 
 {
-    "username": "bandile@gmail.com",
+    "username": "athula@gmail.com",
     "password": "1234567890",
-    "firstName": "Bandile",
-    "lastName": "Danxa",
-    "dateOfBirth": "12/05/1997",
+    "firstName": "Thulas",
+    "lastName": "Sweetie",
+    "dateOfBirth": "11/07/1997",
     "gender": "male",
-    "profilePhoto": "./images/bandile-profile.jpg",
-    "coverPhoto": "./images/bandile-cover.jpg",
-    "biography": "Smooth seas do not make good sailors",
+    "profilePhoto": "./images/athula-profile.jpg",
+    "coverPhoto": "./images/athula-cover.jpg",
+    "biography": "I got me a dream and commited to defending it",
     "joined": "2012",
     "relationshipStatus": "single"
 }
+
+###Login /profile/login
+POST http://localhost:5000/profiles/login
+Content-Type: application/json
+
+{
+    "username": "athulaa@gmail.com",
+    "password": ""
+}
+
+
 ###Get all profiles that are in the database /profiles/:id
 GET http://127.0.0.1:5000/profiles
 Content-Type: application/json

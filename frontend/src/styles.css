@@ -9,11 +9,11 @@
 /*****************Start LoginPage styles**************/
 .loginPage-container{
     background: #f2f3f5;
-    height: 90vh;
+    height: 100vh;
 }
 .loginPage{
     width: 65%;
-    height: 80%;
+    height: 100%;
     margin: auto;
     display: flex;
     align-items: center;
