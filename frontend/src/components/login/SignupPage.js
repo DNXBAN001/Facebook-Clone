@@ -19,7 +19,8 @@ export default function SignupPage(){
         month: "",
         year: ""
     })
-    // const [errorMsgs, setErrorMsgs] = React.useState([])
+    const [usernameExist, setUsernameExist] = React.useState(false)
+    const [isSignupSuccess, setIsSignupSuccess] = React.useState(false)
 
     function handleChange(event){
         const {name, type, value, checked} = event.target
@@ -44,28 +45,37 @@ export default function SignupPage(){
     function handleSubmit(event){
         event.preventDefault()
         submitToAPI(formData)
-        // setTimeout(() => {
-        //     window.location = "/" //direct user back to home page after submitting the form data
-        // }, 5000);
+        setTimeout(() => {
+            if(isSignupSuccess){
+                window.location = "/"
+            }
+        }, 5000);
          
     }
 
     async function submitToAPI(formData){
-        const res = await axios.get("http://localhost:5000/profiles")
-        const profiles = res.data.data
-        profiles.map(profile => {
-            if(profile.username === formData.username){
-                alert("Username already exist...Try using a different email")
+        // const res = await axios.get("http://localhost:5000/profiles")
+        // const profiles = res.data.data
+        // profiles.map(profile => {
+        //     if(profile.username === formData.username){
+        //         alert("Username already exist...Try using a different email")
+        //     }
+        // })
+        const response = await axios.post("http://localhost:5000/profiles/signup", formData)
+        console.log("Immediate code...")
+        if(response.data.success){
+            setIsSignupSuccess(response.data.success)//will help decide whether to redirect user or keep them on the same page
+        }
+        else{
+            await setUsernameExist(!response.data.success)
+        }
+        setTimeout(() => {
+            if(usernameExist){
+                alert(response.data.msg)
             }
-        })
-        await axios.post("http://localhost:5000/profiles/add", formData)
+        }, 2000)
+        console.log(response.data.success)
     }
-
-    // function inputValidation(formData){
-    //    if(!formData.firstName){
-    //         return 
-    //    }
-    // }
 
     return (
         <div className="signup-page">
@@ -87,6 +97,7 @@ export default function SignupPage(){
                         name="firstName" 
                         onChange={handleChange} 
                         className="name-input static-inputs"
+                        required
                     />
                     <input type="text" 
                         placeholder="Last Name"
@@ -94,20 +105,24 @@ export default function SignupPage(){
                         name="lastName" 
                         onChange={handleChange} 
                         className="name-input static-inputs"
+                        required
                     /><br/>
                     <input type="email"
                         className="static-inputs email-password-inputs"
                         placeholder="Mobile number or email address" 
                         value={formData.username} 
                         name="username" 
-                        onChange={handleChange} 
+                        onChange={handleChange}
+                        required
                     /><br/>
                     <input type="password" 
                         className="static-inputs email-password-inputs"
                         placeholder="New password"
                         value={formData.password} 
                         name="password" 
-                        onChange={handleChange} 
+                        onChange={handleChange}
+                        required
+                        minLength="8"
                     /><br/>
                     <div className="date-of-birth">
                         <p style={{marginTop: "15px", marginLeft: "12px",fontSize: "12px"}}>Date of birth ?</p>
@@ -116,6 +131,7 @@ export default function SignupPage(){
                             value={dateOfBirth.day}
                             name="day"
                             onChange={handleDateOfBirth}
+                            required
                         >
                             {calendarData.days.map(day => (
                                 <option
@@ -131,6 +147,7 @@ export default function SignupPage(){
                             value={dateOfBirth.month}
                             name="month"
                             onChange={handleDateOfBirth}
+                            required
                         >
                             {calendarData.months.map(month => (
                                 <option
@@ -145,6 +162,7 @@ export default function SignupPage(){
                             value={dateOfBirth.year}
                             name="year"
                             onChange={handleDateOfBirth}
+                            required
                         >
                             {calendarData.years.map(year => (
                                 <option
@@ -171,6 +189,7 @@ export default function SignupPage(){
                                         onChange={handleChange}
                                         checked={formData.gender === "female"}
                                         value="female"
+                                        required
                                     />
                                 </div>
                             </div>
@@ -185,6 +204,7 @@ export default function SignupPage(){
                                         onChange={handleChange}
                                         checked={formData.gender === "male"}
                                         value="male"
+                                        required
                                     />
                                 </div>
                             </div>
@@ -199,6 +219,7 @@ export default function SignupPage(){
                                         onChange={handleChange}
                                         checked={formData.gender === "custom"}
                                         value="custom"
+                                        required
                                     />
                                 </div>
                             </div>

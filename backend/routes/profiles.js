@@ -8,11 +8,25 @@ const profileSchema = require("../models/profile");
 
 
 /**
- * Create new profile  /profiles/add
+ * Create new profile  /profiles/signup
  */
-router.route("/add").post( async (req, res) => {
+router.route("/signup").post( async (req, res) => {
     const { username, password, firstName, lastName, dateOfBirth, gender,
         profilePhoto, coverPhoto, biography, joined, relationshipStatus } = req.body
+    if(!username || !password || !firstName || !lastName || !dateOfBirth || !gender){
+        return res.status(400).json("Make sure to not leave any input field blank...")
+    }
+    const users = await profileSchema.find()
+    let userExist = false
+    const user = users.map(user => {
+        if(user.username === username) {
+            userExist = true
+            return user
+        }
+    })
+    if(userExist){
+        return res.json({success: false, msg:"Username already exist...Try using a different email"})
+    }
     try{
         const profile = new profileSchema({
             username, password, firstName, lastName, dateOfBirth, gender,

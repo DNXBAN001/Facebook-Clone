@@ -84,7 +84,7 @@
 .signup-page{
     background-image: url('./utils/fb-login-page.PNG');
     background-color: #ffffff;
-    height: 100vh;
+    height: 100%;
     opacity: 10;
 }
 .signup-form-container{

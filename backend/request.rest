@@ -1,5 +1,5 @@
-### Create profile /profiles/create
-POST http://127.0.0.1:5000/profiles/add
+### Create profile /profiles/signup
+POST http://127.0.0.1:5000/profiles/signup
 Content-Type: application/json
 
 {
