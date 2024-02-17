@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export default function LoginPage(){
@@ -8,7 +8,7 @@ export default function LoginPage(){
         password: ""
     })
 
-    const [loginSuccess, setLoginSuccess] = React.useState(false)
+    const redirect = useNavigate()
 
     function handleChange(event){
         const {name, value} = event.target
@@ -27,15 +27,13 @@ export default function LoginPage(){
     async function submitToAPI(user){
         const res = await axios.post("http://localhost:5000/profiles/login", user)
         if(res.data.success){
-            setLoginSuccess(res.data.success)
             console.log(res.data.msg)
             setTimeout(() => {
-                window.location = "/home" //redirect user to home page
+                redirect("/home", {state: user}) //redirect user to home page
             }, 5000)
         }else{
             alert(res.data.msg)
         }
-        console.log(user)
     }
 
     return(

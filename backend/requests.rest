@@ -1,18 +1,18 @@
-### Create profile /profiles/signup
+### Create profile /profiles/signup     Smooth seas do not make sailors
 POST http://127.0.0.1:5000/profiles/signup
 Content-Type: application/json
 
 {
-    "username": "athula@gmail.com",
+    "username": "athule@gmail.com",
     "password": "1234567890",
-    "firstName": "Thulas",
-    "lastName": "Sweetie",
-    "dateOfBirth": "11/07/1997",
+    "firstName": "Athule",
+    "lastName": "Ngxovu",
+    "dateOfBirth": "01/03/1997",
     "gender": "male",
-    "profilePhoto": "./images/athula-profile.jpg",
-    "coverPhoto": "./images/athula-cover.jpg",
-    "biography": "I got me a dream and commited to defending it",
-    "joined": "2012",
+    "profilePhoto": "./images/athule-profile.jpg",
+    "coverPhoto": "./images/athule-cover.jpg",
+    "biography": "Haiboo",
+    "joined": "2016",
     "relationshipStatus": "single"
 }
 
@@ -21,17 +21,29 @@ POST http://localhost:5000/profiles/login
 Content-Type: application/json
 
 {
-    "username": "athulaa@gmail.com",
-    "password": ""
+    "username": "barnez76@gmail.com",
+    "password": "1234567890"
 }
 
+###Requiest for a new accessToken using refreshToken /tokens
+POST http://localhost:5000/tokens
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWM3YjE4MDc4YWIyZjMxMGRkNTM1ZTgiLCJ1c2VybmFtZSI6ImJhcm5lejc2QGdtYWlsLmNvbSIsInVzZXJTdGF0dXMiOiJhZG1pbiIsImlhdCI6MTcwODE3NjU5M30.mxrynqjOV1WJNIo8hSUaJH_bwOy1jqu-CuLxeqkjMnc"
+}
 
 ###Get all profiles that are in the database /profiles/:id
 GET http://127.0.0.1:5000/profiles
 Content-Type: application/json
 
+###Get current profile
+GET http://localhost:5000/profiles/showMe
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWM3YjE4MDc4YWIyZjMxMGRkNTM1ZTgiLCJ1c2VybmFtZSI6ImJhcm5lejc2QGdtYWlsLmNvbSIsInVzZXJTdGF0dXMiOiJhZG1pbiIsImlhdCI6MTcwODE3NjU5MywiZXhwIjoxNzA4MTc2NjUzfQ._wvkQDk9JMY13wbPamiAUOlzMmje9TorJQlxw5y9xHs
+
 ###Get profile by id /profiles/:id
-GET http://localhost:5000/profiles/65aed6d2082122cc1df04c33
+GET http://localhost:5000/profiles/idnkcnskc
 Content-Type: application/json
 
 ###Edit profile by id /profiles/update/:id

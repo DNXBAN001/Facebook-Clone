@@ -33,6 +33,10 @@ app.use("/profiles", profiles);
 const posts = require("./routes/posts");
 app.use("/posts", posts)
 
+//Tokens router
+const tokensRouter = require("./routes/tokens");
+app.use("/tokens", tokensRouter)
+
 //set port to be used
 require("dotenv").config();
 const port = process.env.PORT || 5000;

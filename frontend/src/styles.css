@@ -9,7 +9,7 @@
 /*****************Start LoginPage styles**************/
 .loginPage-container{
     background: #f2f3f5;
-    height: 100vh;
+    height: 780px;
 }
 .loginPage{
     width: 65%;
@@ -84,8 +84,7 @@
 .signup-page{
     background-image: url('./utils/fb-login-page.PNG');
     background-color: #ffffff;
-    height: 100%;
-    opacity: 10;
+    height: 780px;
 }
 .signup-form-container{
     width: 29%;
@@ -254,6 +253,8 @@
     margin-top: 10px;
     width: 23%;
     position: fixed;
+    /* border: 1px solid red; */
+    /* overflow: scroll; */
 }
 .menu-item-container{
     display: flex;
@@ -412,7 +413,7 @@
 
 /**********Start Post styles*********************/
 .post-container{
-    margin-top: 20px;
+    margin: 20px 0px;
     border-radius: 5px;
     background: #ffffff;
 }

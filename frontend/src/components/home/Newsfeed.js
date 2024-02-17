@@ -14,12 +14,12 @@ export default function Newsfeed(){
         //     .then(res => {
         //         setPosts(res.data.data)
         //     })
-        const fetchData = async () => {
+        const fetchPosts = async () => {
             const response = await axios.get("http://localhost:5000/posts")
             const postsData = response.data.data
             setPosts(postsData)
         }
-        fetchData()
+        fetchPosts()
     }, [])
     
     // function handleReactions(id){

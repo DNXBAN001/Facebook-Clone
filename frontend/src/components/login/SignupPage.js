@@ -3,10 +3,11 @@ import { calendarData } from "../../utils/calendar"
 import axios from "axios";
 import ClearIcon from '@mui/icons-material/Clear';
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function SignupPage(){
 
-    const [formData, setFormData] = React.useState({
+    const [user, setUser] = React.useState({
         username: "",
         password: "",
         firstName: "",
@@ -19,19 +20,18 @@ export default function SignupPage(){
         month: "",
         year: ""
     })
-    const [usernameExist, setUsernameExist] = React.useState(false)
-    const [isSignupSuccess, setIsSignupSuccess] = React.useState(false)
+    const redirect = useNavigate()
 
     function handleChange(event){
         const {name, type, value, checked} = event.target
-        setFormData(prevFormData => (
+        setUser(preUser => (
             {
-                ...prevFormData, 
+                ...preUser, 
                 [name]: type === "checkbox" ? checked: value,
                 dateOfBirth: `${dateOfBirth.day}/${dateOfBirth.month}/${dateOfBirth.year}`
             })
         )
-        // console.log(formData)
+        // console.log(user)
     }
     function handleDateOfBirth(event){
         const {name, value} = event.target
@@ -44,28 +44,19 @@ export default function SignupPage(){
 
     function handleSubmit(event){
         event.preventDefault()
-        submitToAPI(formData)
-        setTimeout(() => {
-            if(isSignupSuccess){
-                window.location = "/"
-            }
-        }, 5000);
-         
+        submitToAPI(user)
     }
 
-    async function submitToAPI(formData){
-        const response = await axios.post("http://localhost:5000/profiles/signup", formData)
+    async function submitToAPI(user){
+        const response = await axios.post("http://localhost:5000/profiles/signup", user)
         if(response.data.success){
-            setIsSignupSuccess(response.data.success)//will help decide whether to redirect user or keep them on the same page
+            setTimeout(() => {
+                redirect("/home", user)
+            }, 5000)
         }
         else{
-            setUsernameExist(!response.data.success)
-        }
-        setTimeout(() => {
-            if(usernameExist){
-                alert(response.data.msg)
-            }
-        }, 2000)
+            alert(response.data.msg)
+        }   
         console.log(response.data.success)
     }
 
@@ -78,14 +69,14 @@ export default function SignupPage(){
                         <h1>Sign Up</h1>
                         <p>It's quick and easy</p>
                     </div>
-                    <div><Link to="/login"><ClearIcon /></Link></div>
+                    <div><Link to="/" style={{textDecoration: "none", color: "black"}}><ClearIcon /></Link></div>
                 </div>
                 
                 <hr/>
                 <form onSubmit={handleSubmit} className="signup-form">
                     <input type="text" 
                         placeholder="First Name"
-                        value={formData.firstName}
+                        value={user.firstName}
                         name="firstName" 
                         onChange={handleChange} 
                         className="name-input static-inputs"
@@ -93,7 +84,7 @@ export default function SignupPage(){
                     />
                     <input type="text" 
                         placeholder="Last Name"
-                        value={formData.lastName}
+                        value={user.lastName}
                         name="lastName" 
                         onChange={handleChange} 
                         className="name-input static-inputs"
@@ -102,7 +93,7 @@ export default function SignupPage(){
                     <input type="email"
                         className="static-inputs email-password-inputs"
                         placeholder="Mobile number or email address" 
-                        value={formData.username} 
+                        value={user.username} 
                         name="username" 
                         onChange={handleChange}
                         required
@@ -110,7 +101,7 @@ export default function SignupPage(){
                     <input type="password" 
                         className="static-inputs email-password-inputs"
                         placeholder="New password"
-                        value={formData.password} 
+                        value={user.password} 
                         name="password" 
                         onChange={handleChange}
                         required
@@ -179,7 +170,7 @@ export default function SignupPage(){
                                         className="gender-input"
                                         name="gender"
                                         onChange={handleChange}
-                                        checked={formData.gender === "female"}
+                                        checked={user.gender === "female"}
                                         value="female"
                                         required
                                     />
@@ -194,7 +185,7 @@ export default function SignupPage(){
                                         className="gender-input"
                                         name="gender"
                                         onChange={handleChange}
-                                        checked={formData.gender === "male"}
+                                        checked={user.gender === "male"}
                                         value="male"
                                         required
                                     />
@@ -209,7 +200,7 @@ export default function SignupPage(){
                                         className="gender-input"
                                         name="gender"
                                         onChange={handleChange}
-                                        checked={formData.gender === "custom"}
+                                        checked={user.gender === "custom"}
                                         value="custom"
                                         required
                                     />

@@ -7,19 +7,20 @@ import Profile from "./components/profile/Profile";
 // import { createBrowserRouter, RouterProvider, Router, Route } from "react-router-dom";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
+
 export default function App() {
 
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<LoginPage />} exact/>
-          <Route path="/signup" element={<SignupPage />} />
-          <Route path="/home" element={<HomePage />} exact/>
-          <Route path="/profile" element={<Profile />} exact/>
-        </Routes>
-      </BrowserRouter>
-    </div>
+      <div className="App">
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<LoginPage />} exact/>
+            <Route path="/signup" element={<SignupPage />} />
+            <Route path="/home" element={<HomePage />} exact/>
+            <Route path="/profile" element={<Profile />} exact/>
+          </Routes>
+        </BrowserRouter>
+      </div>
   );
 }
 

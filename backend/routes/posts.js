@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 //require the post Schema
-const postSchema = require("../models/post");
+const postCollection = require("../models/post");
 
 
 /**
@@ -12,7 +12,7 @@ router.route("/add").post( async (req, res) => {
     const { postOwner, postOwnerProfilePhoto, timePosted,
         privacy, caption, files, reactions, comments, shares} = req.body
     try{
-        const post = new postSchema({
+        const post = new postCollection({
             postOwner, postOwnerProfilePhoto, timePosted,
         privacy, caption, files, reactions, comments, shares
         })
@@ -28,7 +28,7 @@ router.route("/add").post( async (req, res) => {
  */
 router.route("/").get( async (req, res) => {
     try{
-        const posts = await postSchema.find()
+        const posts = await postCollection.find()
         res.status(200).json({success: true, data: posts})
     }catch(err){
         res.status(400).json({success: false, msg: err})
@@ -41,7 +41,7 @@ router.route("/").get( async (req, res) => {
 router.route("/:id").get( async (req, res) => {
     const { id } = req.params
     try{
-        const post = await postSchema.findById(id)
+        const post = await postCollection.findById(id)
         res.status(200).json({success: true, data: post})
     }catch(err){
         res.status(400).json({success: false, msg: err})
@@ -55,7 +55,7 @@ router.route("/:id").put( async (req, res) => {
     const { id } = req.params
     const {  privacy, caption, files } = req.body
     try{
-        const post = await postSchema.findById(id)
+        const post = await postCollection.findById(id)
         post.privacy = privacy
         post.caption = caption
         post.files = files
@@ -73,7 +73,7 @@ router.route("/:id").put( async (req, res) => {
 router.route("/:id").delete( async (req, res) => {
     const { id } = req.params
     try{
-        await postSchema.findByIdAndRemove(id)
+        await postCollection.findByIdAndRemove(id)
         res.status(200).json({success: true, msg: "Post deleted successfully..."})
     }catch(err){
         res.status(400).json({success: false, msg: err})
