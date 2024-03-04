@@ -34,6 +34,10 @@ const profileSchema = new mongoose.Schema({
         trim: true,
         required: true
     },
+    userStatus: {
+        type: String,
+        enum: ["admin", "user"]
+    },
     profilePhoto: {
         type: String,
         trim: true

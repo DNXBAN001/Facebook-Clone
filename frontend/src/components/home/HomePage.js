@@ -14,14 +14,18 @@ export default function HomePage(props){
     const locationObj = useLocation()
 
     const [user, setUser] = React.useState("")
-
+    console.log(locationObj.state.userId)
     React.useEffect(() => {
         async function fetchUserData(){
-            const res = await axios.get("http://localhost:5000/profiles/"+locationObj.state.username)
-            setUser(res.data)
+            try{
+                const res = await axios.get("http://localhost:5000/profiles/"+locationObj.state.userId)
+                setUser(res.data)
+            }catch(err){
+                alert("Error while trying to fetch user data...")
+            }
         }
         fetchUserData()
-    }, [])
+    }, [locationObj.state.userId])
     console.log(user)
 
     return(

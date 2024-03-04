@@ -48,16 +48,19 @@ export default function SignupPage(){
     }
 
     async function submitToAPI(user){
-        const response = await axios.post("http://localhost:5000/profiles/signup", user)
-        if(response.data.success){
-            setTimeout(() => {
-                redirect("/home", user)
-            }, 5000)
-        }
-        else{
-            alert(response.data.msg)
-        }   
-        console.log(response.data.success)
+        try{
+            const response = await axios.post("http://localhost:5000/profiles/signup", user)
+            console.log(response.data.success)
+            if(response.data.success){
+                setTimeout(() => {
+                    redirect("/home", {state: user})
+                }, 5000)
+            }
+            else{
+                alert(response.data.msg)
+        }}catch(err){
+            alert("Server error occured...")
+        } 
     }
 
     return (

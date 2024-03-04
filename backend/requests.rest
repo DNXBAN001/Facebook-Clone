@@ -3,61 +3,70 @@ POST http://127.0.0.1:5000/profiles/signup
 Content-Type: application/json
 
 {
-    "username": "athule@gmail.com",
+    "username": "athula@gmail.com",
     "password": "1234567890",
-    "firstName": "Athule",
-    "lastName": "Ngxovu",
-    "dateOfBirth": "01/03/1997",
-    "gender": "male",
-    "profilePhoto": "./images/athule-profile.jpg",
-    "coverPhoto": "./images/athule-cover.jpg",
-    "biography": "Haiboo",
-    "joined": "2016",
+    "firstName": "Thulas",
+    "lastName": "Sweetie",
+    "dateOfBirth": "11/07/1997",
+    "gender": "female",
+    "profilePhoto": "./images/athula-profile.jpg",
+    "coverPhoto": "./images/athula-cover.jpg",
+    "biography": "Got me a vision and commited to defending it",
+    "joined": "2012",
     "relationshipStatus": "single"
 }
 
-###Login /profile/login
+###Login /profile/login 
 POST http://localhost:5000/profiles/login
 Content-Type: application/json
 
 {
-    "username": "barnez76@gmail.com",
+    "username": "athula@gmail.com",
     "password": "1234567890"
 }
 
-###Requiest for a new accessToken using refreshToken /tokens
+###Request for a new accessToken using refreshToken /tokens
 POST http://localhost:5000/tokens
 Content-Type: application/json
 
 {
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWM3YjE4MDc4YWIyZjMxMGRkNTM1ZTgiLCJ1c2VybmFtZSI6ImJhcm5lejc2QGdtYWlsLmNvbSIsInVzZXJTdGF0dXMiOiJhZG1pbiIsImlhdCI6MTcwODE3NjU5M30.mxrynqjOV1WJNIo8hSUaJH_bwOy1jqu-CuLxeqkjMnc"
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWRhNWU5MWUzNmNiOGI4ZjBmNzA2MTUiLCJ1c2VybmFtZSI6ImF0aHVsYUBnbWFpbC5jb20iLCJ1c2VyU3RhdHVzIjoidXNlciIsImlhdCI6MTcwODk2MDI0MX0.pm3m5FOlPiX0iEqYSBzD-TxKuPiJDRFN4oKuUPkMJKM"
 }
 
 ###Get all profiles that are in the database /profiles/:id
 GET http://127.0.0.1:5000/profiles
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWRhNWU5MWUzNmNiOGI4ZjBmNzA2MTUiLCJ1c2VybmFtZSI6ImF0aHVsYUBnbWFpbC5jb20iLCJ1c2VyU3RhdHVzIjoidXNlciIsImlhdCI6MTcwODk2MDI0MSwiZXhwIjoxNzA5MDQ2NjQxfQ.2MzVBUdNisZCbgSiMsTkPRZa8TSr-0orCQdg9N5t9LU
 
 ###Get current profile
 GET http://localhost:5000/profiles/showMe
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWM3YjE4MDc4YWIyZjMxMGRkNTM1ZTgiLCJ1c2VybmFtZSI6ImJhcm5lejc2QGdtYWlsLmNvbSIsInVzZXJTdGF0dXMiOiJhZG1pbiIsImlhdCI6MTcwODE3NjU5MywiZXhwIjoxNzA4MTc2NjUzfQ._wvkQDk9JMY13wbPamiAUOlzMmje9TorJQlxw5y9xHs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWRhNWU5MWUzNmNiOGI4ZjBmNzA2MTUiLCJ1c2VybmFtZSI6ImF0aHVsYUBnbWFpbC5jb20iLCJ1c2VyU3RhdHVzIjoidXNlciIsImlhdCI6MTcwODk2MDI0MSwiZXhwIjoxNzA5MDQ2NjQxfQ.2MzVBUdNisZCbgSiMsTkPRZa8TSr-0orCQdg9N5t9LU
+
+###Get profile by username /profiles/user/:username
+GET http://localhost:5000/profiles/user/athula@gmail.com
+Content-Type: application/json
 
 ###Get profile by id /profiles/:id
-GET http://localhost:5000/profiles/idnkcnskc
+GET http://localhost:5000/profiles/65da53a1fa7dc090a619af4f
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWRhNWU5MWUzNmNiOGI4ZjBmNzA2MTUiLCJ1c2VybmFtZSI6ImF0aHVsYUBnbWFpbC5jb20iLCJ1c2VyU3RhdHVzIjoidXNlciIsImlhdCI6MTcwODk2MDI0MSwiZXhwIjoxNzA5MDQ2NjQxfQ.2MzVBUdNisZCbgSiMsTkPRZa8TSr-0orCQdg9N5t9LU
 
 ###Edit profile by id /profiles/update/:id
-PUT http://localhost:5000/profiles/update/65aed6d2082122cc1df04c33
+PUT http://localhost:5000/profiles/update/65da5e91e36cb8b8f0f70615
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWRhNTNhMWZhN2RjMDkwYTYxOWFmNGYiLCJ1c2VybmFtZSI6ImJhcm5lejc2QGdtYWlsLmNvbSIsInVzZXJTdGF0dXMiOiJhZG1pbiIsImlhdCI6MTcwODk3MTEzMCwiZXhwIjoxNzA4OTc0NzMwfQ.NOVeS3G5c4QDjJbeMmtiubeIIyVajtKQ2WYAGMefRuo
 
 {
     "username": "athula@gmail.com",
     "password": "1234567890",
     "firstName": "Thulas",
     "lastName": "Sweetie",
+    "dateOfBirth": "11/07/1997",
+    "gender": "female",
     "profilePhoto": "./images/athula-profile.jpg",
     "coverPhoto": "./images/athula-cover.jpg",
-    "biography": "I've got a dream and commited to defending it...",
+    "biography": "I got me a vision and commited to defending it...",
     "joined": "2012",
     "relationshipStatus": "single"
 }
@@ -65,7 +74,7 @@ Content-Type: application/json
 ###Delete profile by id /profiles/:id
 DELETE http://localhost:5000/profiles/65aee1f2765b8a86ca1b26a2
 
-/////////////////////////////////////////////////////////////////
+##################################################################
 ### Create post /posts/create
 POST http://localhost:5000/posts/add
 Content-Type: application/json

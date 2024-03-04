@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-
+const { authenticateToken, authorizePermissions } = require("../middleware/auth")
 //require the post Schema
 const postCollection = require("../models/post");
 
@@ -26,8 +26,9 @@ router.route("/add").post( async (req, res) => {
 /** 
  * Get all posts  /posts
  */
-router.route("/").get( async (req, res) => {
+router.route("/").get( /*authenticateToken, authorizePermissions("admin"),*/ async (req, res) => {
     try{
+        console.log()
         const posts = await postCollection.find()
         res.status(200).json({success: true, data: posts})
     }catch(err){

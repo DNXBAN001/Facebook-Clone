@@ -1,4 +1,4 @@
-require("dotenv").config();
+// require("dotenv").config();
 const router = require("express").Router();
 const jwt = require("jsonwebtoken");
 const tokenCollection = require("../models/token");
@@ -21,7 +21,9 @@ router.route("/").post( async (req, res) => {
     jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, user) => {
         if(err) return res.status(401).json({msg: "Token not valid - Expired"})
         const payload = user
-        const accessToken = jwt.sign(payload, process.env.ACCESS_TOKEN_SECRET, {expiresIn: "60s"})
+        //The expiration of this newAccessToken somehow depends on the time the
+        //refrreshToken was created and not 3m from the time it was created - Revisit that
+        const accessToken = jwt.sign(payload, process.env.ACCESS_TOKEN_SECRET, {expiresIn: "1d"})
         res.status(200).json({newAccessToken: accessToken})
     })
 })
