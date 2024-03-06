@@ -1,17 +1,16 @@
 import React from "react";
-import { UserContext } from "../home/HomePage";
+
 import ProfileCover from "./ProfileCover";
 import Intro from "./Intro";
 import StatusForm from "../StatusForm";
 import PostsManager from "./PostsManager";
 import Post from "../Post";
 import profilesData from "../../utils/profiles";
+import { useGlobalContext } from "../../context-provider";
 
 export default function Profile(){
 
-    const user = React.useContext(UserContext)
-
-    console.log(user)
+    const { user } = useGlobalContext()
 
     return(
         <div className="profile-container">
@@ -19,7 +18,7 @@ export default function Profile(){
             <div className="grid">
                 <Intro />
                 <div>
-                    {/* <StatusForm className="profile-status-form"/> */}
+                    <StatusForm className="profile-status-form"/>
                     <PostsManager/>
                     <Post 
                         className="post-frame" profilePhoto={profilesData[0].profilePhoto} 

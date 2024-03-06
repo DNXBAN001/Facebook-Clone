@@ -1,5 +1,5 @@
 import React from "react"
-import { UserContext } from "./HomePage";
+import { useGlobalContext } from "../../context-provider";
 import MenuItem from "../MenuItem";
 import data from "../../utils/side-menu-data";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -7,15 +7,13 @@ import { Link } from "react-router-dom";
 
 export default function LeftSidebar(){
 
-    const user = React.useContext(UserContext)
-
-    // console.log(user.profilePhoto, user.firstName, user.lastName)
+    const { user } = useGlobalContext()
 
     let i = 0
     const menuItems = data.map(menuItem => {
         i++
         return i === 1 ? (<Link to="/profile" key={i} style={{color: "black", textDecoration: "none"}}>
-            <MenuItem icon={user.profilePhoto} label={`${user.firstName} ${user.lastName}`}/> </Link>):
+            <MenuItem icon={user.profilePhoto} label={user.fullName}/> </Link>):
             (<MenuItem key={menuItem.id} icon={menuItem.icon} label={menuItem.label}/>)
     })
 

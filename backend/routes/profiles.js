@@ -81,7 +81,7 @@ router.route("/login").post( async (req, res) => {
             let accessToken = ""
             if(!existingToken){
                 //Create acceesToken for the user
-                accessToken = createToken(tokenUser, process.env.TOKEN_SECRET, {expiresIn: "1d"})
+                accessToken = createToken(tokenUser, process.env.TOKEN_SECRET, {expiresIn: "60s"})
                 
                 //Create a refreshToken also to be saved on the DB whenever the user login
                 const refreshToken = jwt.sign(tokenUser, process.env.TOKEN_SECRET, {expiresIn: "7d"})
@@ -90,13 +90,11 @@ router.route("/login").post( async (req, res) => {
                 token = new tokenCollection({refreshToken, ip, userAgent, user})
                 attachCookiesToResponse(res, accessToken, refreshToken)
                 await token.save()
-                console.log("Test 1")
             }else{
                 console.log("user already has an existing token...")
                 //Create new accesToken for the user
-                accessToken = createToken(tokenUser, process.env.TOKEN_SECRET, {expiresIn: "1d"})
+                accessToken = createToken(tokenUser, process.env.TOKEN_SECRET, {expiresIn: "60s"})
                 attachCookiesToResponse(res, accessToken, token.refreshToken)
-                console.log("Test 2")
             }
             console.log(req.cookies)
             res.status(200)
@@ -106,7 +104,9 @@ router.route("/login").post( async (req, res) => {
                         userId: user._id,
                         userStatus: user.userStatus,
                         accessToken: accessToken,
-                        refreshToken: token.refreshToken
+                        // refreshToken: token.refreshToken
+                        fullName: `${user.firstName} ${user.lastName}`,
+                        profilePhoto: user.profilePhoto
                     }, 
                     msg: "Login was successful..."
             })
@@ -161,7 +161,7 @@ router.route("/user/:username").get( authenticateToken, async (req, res) => {
 /**
  * Get profile by id /profiles/:id
  */
-router.route("/:id").get( /*authenticateToken,*/ async (req, res) => {
+router.route("/:id").get( authenticateToken, async (req, res) => {
     const { id } = req.params
     try{
         // console.log(req)

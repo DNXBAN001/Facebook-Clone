@@ -1,10 +1,10 @@
 import React from "react";
 import { Menu, Notifications, Search } from "@mui/icons-material";
-import { UserContext } from "./HomePage";
+import { useGlobalContext } from "../../context-provider";
 
 export default function Header(){
 
-    const user = React.useContext(UserContext)
+    const { user } = useGlobalContext()
 
     function handleSubmit(event){
         event.preventDefault()

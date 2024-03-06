@@ -2,15 +2,16 @@ import React from "react";
 import { UserContext } from "./home/HomePage";
 import FormButtons from "./ILButton";
 import data from "../utils/status-form-buttons";
+import { useGlobalContext } from "../context-provider";
 
 export default function Statusform(){
 
-    const user = React.useContext(UserContext)
+    const { user } = useGlobalContext()
 
     const formButtons = data.map(button => (
         <FormButtons key={button.id} buttonIcon={button.buttonIcon} buttonLabel={button.buttonLabel} />
     ));
-    const placeholderText = user.firstName ? `What's on your mind, ${user.firstName}?`: "What's on your mind?";
+    const placeholderText = user.fullName ? `What's on your mind, ${user.fullName.split(" ")[0]}?`: "What's on your mind?";
 
     return(
         <div className="status-form-container">

@@ -8,16 +8,18 @@ function createToken(payload, tokenSecret, options){
 async function authenticateToken(req, res, next){
   let accessToken, refreshToken
   //Get authHeader and see if there aren't any tokens attached to it
-  const authHeader = req.headers.authorization || req.headers.Authorization
+  const authHeader = req.headers.authorization //|| req.headers.Authorization
+  // console.log("Request.header.authorization value")
+  // console.log(authHeader)
   if(authHeader && authHeader.startsWith("Bearer ")){
     accessToken = authHeader.split(" ")[1]
   }
   else if(req.cookies){
-    accessToken = req.cookies.accessToken//could be nundefined if expired
+    accessToken = req.cookies.accessToken//could be undefined if expired
     refreshToken = req.cookies.refreshToken
   }
 
-  console.log(req.cookies)
+  // console.log(req.cookies)
 
   console.log(accessToken, refreshToken)
 
@@ -58,7 +60,7 @@ async function authenticateToken(req, res, next){
     //attachCookiesToResponse(res, payload, refreshTokenJWT)
     res.cookie("refreshToken", refreshTokenJWT, {
       sameSite: "None",//cross-site cookie
-      expires: new Date(Date.now()*1000*60*60*24*7)//expire in 7 days - a week
+      expires: new Date(Date.now()+1000*60*60*24*7)//expire in 7 days - a week
     })
     //assign req.user
     req.user = payload
@@ -92,7 +94,7 @@ function attachCookiesToResponse(res, accessToken, refreshToken){
     secure: process.env.NODE_ENV === 'production',//tell express to use https encrypted channel to exchange cookie data
     // signed: true,
     sameSite: 'None',
-    expires: new Date(Date.now() + oneDay),
+    expires: new Date(Date.now() + 1000*60),
   });
   
   res.cookie('refreshToken', refreshToken, {

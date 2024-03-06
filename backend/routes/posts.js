@@ -26,9 +26,8 @@ router.route("/add").post( async (req, res) => {
 /** 
  * Get all posts  /posts
  */
-router.route("/").get( /*authenticateToken, authorizePermissions("admin"),*/ async (req, res) => {
+router.route("/").get( authenticateToken, async (req, res) => {
     try{
-        console.log()
         const posts = await postCollection.find()
         res.status(200).json({success: true, data: posts})
     }catch(err){

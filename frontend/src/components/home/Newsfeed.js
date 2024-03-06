@@ -3,24 +3,29 @@ import StoriesReels from "./StoriesReels";
 import StatusForm from "../StatusForm";
 import Post from "../Post";
 import axios from "axios";
+import { useGlobalContext } from "../../context-provider";
 
 export default function Newsfeed(){
 
-    const [posts, setPosts] = React.useState([])
-    // const [reactions, setReactions] = React.useState(0)
+    const { user, posts, setPosts } = useGlobalContext()
 
-    React.useEffect( () => {
-        // axios.get("http://localhost:5000/posts")
-        //     .then(res => {
-        //         setPosts(res.data.data)
-        //     })
-        const fetchPosts = async () => {
-            const response = await axios.get("http://localhost:5000/posts")
-            const postsData = response.data.data
-            setPosts(postsData)
+    React.useLayoutEffect( () => {
+        async function fetchPosts(){
+            try{
+                const response = await axios.get("http://localhost:5000/posts", {
+                    headers: {
+                        "Authorization": "Bearer "+ user.accessToken
+                    }
+                })
+                console.log("About to set posts...")
+                setPosts([...response.data.data])
+                
+            }catch(err){
+                alert("Error while fetching posts")
+            }
         }
         fetchPosts()
-    }, [])
+    }, [posts])
     
     // function handleReactions(id){
     //     setReactions(prevReactions => {
