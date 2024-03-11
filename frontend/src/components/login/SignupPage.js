@@ -49,12 +49,12 @@ export default function SignupPage(){
 
     async function submitToAPI(user){
         try{
-            const response = await axios.post("http://localhost:5000/profiles/signup", user)
+            const response = await axios.post("http://localhost:5000/auth/signup", user)
             console.log(response.data.success)
             if(response.data.success){
                 setTimeout(() => {
-                    redirect("/home", {state: user})
-                }, 5000)
+                    redirect("/")//take user to login
+                }, 1000)
             }
             else{
                 alert(response.data.msg)

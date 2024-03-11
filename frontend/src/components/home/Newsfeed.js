@@ -4,34 +4,30 @@ import StatusForm from "../StatusForm";
 import Post from "../Post";
 import axios from "axios";
 import { useGlobalContext } from "../../context-provider";
+import Cookies from "universal-cookie";
 
 export default function Newsfeed(){
 
-    const { user, posts, setPosts } = useGlobalContext()
+    const [posts, setPosts] = React.useState([])
+    const accessToken = new Cookies().get("accessToken")
 
-    React.useLayoutEffect( () => {
+    React.useEffect( () => {
         async function fetchPosts(){
             try{
                 const response = await axios.get("http://localhost:5000/posts", {
                     headers: {
-                        "Authorization": "Bearer "+ user.accessToken
+                        "Authorization": "Bearer "+ accessToken
                     }
                 })
                 console.log("About to set posts...")
-                setPosts([...response.data.data])
+                setPosts(response.data.data)
                 
             }catch(err){
                 alert("Error while fetching posts")
             }
         }
         fetchPosts()
-    }, [posts])
-    
-    // function handleReactions(id){
-    //     setReactions(prevReactions => {
-    //         if
-    //     })
-    // }
+    }, [])
 
     const postsList = posts.map(post => (
             <Post key={post._id}

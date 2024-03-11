@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 require("dotenv").config();
 const cookieParser = require("cookie-parser");
 
@@ -17,7 +17,7 @@ app.set('trust proxy', 1);
 app.use(
     rateLimiter({
       windowMs: 15 * 60 * 1000,//15 mins
-      max: 60,//Limit each IP to 60 login requests per 'window' per 15mins
+      max: 60,//Limit each IP to 60 login requests per 'window' per 1min
       // message: {
       //   message: "Too many login attempts from this IP, try again in 15 mins"
       // },
@@ -32,14 +32,14 @@ app.use(
 //provides express middleware that can enable calls with different options
 //Makes it easy say for example you want to access something outside your server
 app.use(cors({
-    origin: "http://localhost:3000",
-    credentials: true
+    // origin: "http://localhost:3000",
+    // credentials: true
 }));
 app.use(xss());
 //allow our server to send and receive json
 app.use(express.json())
 //use cookie parser middleware
-app.use(cookieParser(process.env.TOKEN_SECRET));
+app.use(cookieParser(/* value of req.secret */));
 //set public folder to be the default directory for assets
 app.use(express.static("./public"))
 
@@ -55,6 +55,10 @@ con.on("open", () => {
     console.log("Database connection is established...")
 })
 
+//Auth router
+const authRouter = require("./routes/authRouter");
+app.use("/auth", authRouter)
+
 //require the /api/profiles router
 const profiles = require("./routes/profiles");
 app.use("/profiles", profiles);
@@ -62,11 +66,6 @@ app.use("/profiles", profiles);
 //require the /api/posts router 
 const posts = require("./routes/posts");
 app.use("/posts", posts)
-
-//Tokens router
-const tokensRouter = require("./routes/tokens");
-app.use("/tokens", tokensRouter);
-
 
 const port = process.env.PORT || 5000;//set port to be used
 

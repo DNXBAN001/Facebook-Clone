@@ -10,16 +10,16 @@ export default function LoginPage(){
         username: "",
         password: ""
     })
-    const { user, setUser, loading, setLoading } = useGlobalContext()
+    const { setUser, isLoading, setIsLoading } = useGlobalContext()
     const cookies = new Cookies()//instantiate cookie obj
 
     const redirect = useNavigate()
 
     function handleChange(event){
         const {name, value} = event.target
-        setFormData(prevformData => {
+        setFormData(prevFormData => {
             return({
-                ...prevformData, [name]: value
+                ...prevFormData, [name]: value
             })
         })
     }
@@ -27,26 +27,30 @@ export default function LoginPage(){
     function handleSubmit(event){
         event.preventDefault()
         submitToAPI(formData)
-        //save token as cookie
-        //saveTokenInCookies()
-        setTimeout(() => {
-            setLoading(false)
-            redirect("/home")
-        }, 5000)
     }
-    function saveTokenInCookies(){
-        cookies.set("accessToken", user.accessToken, {
-            expires: new Date(Date.now() + 1000*60*60*24)
+    function saveTokensInCookies(accessToken, refreshToken){
+        cookies.set("accessToken", accessToken, {
+            expires: new Date(Date.now() + 1000*60*30)//expire in 30mins
+        })
+        cookies.set("refreshToken", refreshToken, {
+            httpOnly: true,
+            expires: new Date(Date.now() + 1000*60*60*24*7)//expire in 7 days
         })
     }
     async function submitToAPI(formData){
-        setLoading(true)
+        setIsLoading(true)
         try{
-            const res = await axios.post("http://localhost:5000/profiles/login", formData)
+            const res = await axios.post("http://localhost:5000/auth/login", formData)
             setFormData({username: "", password: ""})
             if(res.data.success){
                 console.log(res.data.msg)
-                setUser(res.data.user)
+                saveTokensInCookies(res.data.accessToken, res.data.refreshToken)
+                const { userId, userStatus, fullName, profilePhoto } = jwtDecode(cookies.get("accessToken"))
+                setUser({ userId, userStatus, fullName, profilePhoto })
+                setTimeout(() => {
+                    setIsLoading(false)
+                    redirect("/home")
+                }, 1000)
             }else{
                 alert(res.data.msg)
             }
@@ -82,7 +86,7 @@ export default function LoginPage(){
                                 required
                             />
                         </div>
-                        <input className="login-button btn" type="submit" value={loading ? "loading...":"Log in"} disable={loading}/>
+                        <input className="login-button btn" type="submit" value={isLoading ? "Loading...":"Log in"} disabled={isLoading}/>
                         <br/>
                         <div className="forgot-password"><a href="/">Forgot password</a></div>
                         <Link to="/signup">

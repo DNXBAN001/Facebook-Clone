@@ -1,8 +1,10 @@
 import FormButtons from "./ILButton";
 import CommentField from "./IconInputForm";
 import formButtonsData from "../utils/post-ilbuttons";
+import { useGlobalContext } from "../context-provider";
 
 export default function Post(props){
+    const { user } = useGlobalContext()
 
     const formButtons = formButtonsData.map(button => (
         <FormButtons key={button.id} buttonIcon={button.buttonIcon} buttonLabel={button.buttonLabel}/>
@@ -33,7 +35,7 @@ export default function Post(props){
                 {formButtons}
             </div>
             <div className="comment-field">
-                <CommentField text="Write a comment..." style={{fontSize: "14px"}}/>
+                <CommentField profilePhoto={user.profilePhoto} text="Write a comment..." style={{fontSize: "14px"}}/>
             </div>
         </div>
     )

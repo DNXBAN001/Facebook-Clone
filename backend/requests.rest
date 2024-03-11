@@ -1,23 +1,23 @@
 ### Create profile /profiles/signup     Smooth seas do not make sailors
-POST http://127.0.0.1:5000/profiles/signup
+POST http://127.0.0.1:5000/auth/signup
 Content-Type: application/json
 
 {
-    "username": "athula@gmail.com",
+    "username": "aya@gmail.com",
     "password": "1234567890",
-    "firstName": "Thulas",
-    "lastName": "Sweetie",
-    "dateOfBirth": "11/07/1997",
-    "gender": "female",
-    "profilePhoto": "./images/athula-profile.jpg",
-    "coverPhoto": "./images/athula-cover.jpg",
-    "biography": "Got me a vision and commited to defending it",
+    "firstName": "Ayabonga",
+    "lastName": "Veli",
+    "dateOfBirth": "27/10/1997",
+    "gender": "male",
+    "profilePhoto": "./images/aya-profile.jpg",
+    "coverPhoto": "./images/aya-cover.jpg",
+    "biography": "Mojo!",
     "joined": "2012",
     "relationshipStatus": "single"
 }
 
 ###Login /profile/login 
-POST http://localhost:5000/profiles/login
+POST http://localhost:5000/auth/login
 Content-Type: application/json
 
 {
@@ -28,10 +28,10 @@ Content-Type: application/json
 ###Request for a new accessToken using refreshToken /tokens
 POST http://localhost:5000/tokens
 Content-Type: application/json
-
-{
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWRhNWU5MWUzNmNiOGI4ZjBmNzA2MTUiLCJ1c2VybmFtZSI6ImF0aHVsYUBnbWFpbC5jb20iLCJ1c2VyU3RhdHVzIjoidXNlciIsImlhdCI6MTcwODk2MDI0MX0.pm3m5FOlPiX0iEqYSBzD-TxKuPiJDRFN4oKuUPkMJKM"
-}
+Cookies: "refreshToken="
+# {
+#     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWRhNWU5MWUzNmNiOGI4ZjBmNzA2MTUiLCJ1c2VybmFtZSI6ImF0aHVsYUBnbWFpbC5jb20iLCJ1c2VyU3RhdHVzIjoidXNlciIsImlhdCI6MTcwODk2MDI0MX0.pm3m5FOlPiX0iEqYSBzD-TxKuPiJDRFN4oKuUPkMJKM"
+# }
 
 ###Get all profiles that are in the database /profiles/:id
 GET http://127.0.0.1:5000/profiles
@@ -84,8 +84,8 @@ Content-Type: application/json
     "postOwnerProfilePhoto": "/images/athula-profile.jpg",
     "timePosted": "50",
     "privacy": "friends",
-    "caption": "Degree bagged",
-    "files": "/images/athula1.jpg",
+    "caption": "Hi",
+    "files": "/images/athula7.jpg",
     "reactions": 100,
     "comments": 5,
     "shares": 6
